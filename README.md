@@ -39,6 +39,7 @@ The system is also feedback-driven:
 - [memory/style.md](C:\git\codex-roams\memory\style.md): stable preferences
 - [memory/decisions.md](C:\git\codex-roams\memory\decisions.md): important decisions
 - [memory/lessons.md](C:\git\codex-roams\memory\lessons.md): durable lessons
+- [memory/candidates.md](C:\git\codex-roams\memory\candidates.md): staged candidate memory awaiting promotion, defer, or discard
 - [docs/status.md](C:\git\codex-roams\docs\status.md): current repository purpose, stage, goals, and open questions
 - [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md): long-horizon feature sequencing and phase definitions
 - [skills/manager/SKILL.md](C:\git\codex-roams\skills\manager\SKILL.md): orchestration skill
@@ -58,11 +59,12 @@ Use this sequence when starting a new project from this template:
 1. Copy the template into the new project repository.
 2. Update [AGENTS.md](C:\git\codex-roams\AGENTS.md) with project-specific constraints, conventions, and definitions of done.
 3. Add or revise entries in [memory/style.md](C:\git\codex-roams\memory\style.md) to reflect how you want work performed.
-4. Record any initial architecture choices in [memory/decisions.md](C:\git\codex-roams\memory\decisions.md).
-5. Establish [docs/status.md](C:\git\codex-roams\docs\status.md) as the current project snapshot and [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md) as the long-horizon feature roadmap.
-6. Expand the role skills only when the project needs more specialized behavior.
-7. For non-trivial work, instantiate the template in [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) and let the Manager lead the lifecycle.
-8. After meaningful work, promote only durable signal into the memory files.
+4. Use [memory/candidates.md](C:\git\codex-roams\memory\candidates.md) to stage potentially durable memory before promotion.
+5. Record any initial architecture choices in [memory/decisions.md](C:\git\codex-roams\memory\decisions.md).
+6. Establish [docs/status.md](C:\git\codex-roams\docs\status.md) as the current project snapshot and [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md) as the long-horizon feature roadmap.
+7. Expand the role skills only when the project needs more specialized behavior.
+8. For non-trivial work, instantiate the template in [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) and let the Manager lead the lifecycle.
+9. After meaningful work, stage or promote only durable signal into the memory files.
 
 ## Document Model
 

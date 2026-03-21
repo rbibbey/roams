@@ -24,9 +24,10 @@ Current roadmap state:
 
 - completed: v1 foundation
 - completed: Manager-owned research capability
-- in progress: Phase 2 - Memory Operations
+- completed: Phase 2 - Memory Operations
+- next active phase: Phase 3 - Rework And Diagnosis Taxonomy
 
-Phase 2 should begin before additional role growth or subagent expansion.
+Phase 3 should begin before subagent expansion or broader automation work.
 
 ## Planned Phases
 

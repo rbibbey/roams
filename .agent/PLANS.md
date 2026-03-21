@@ -8,7 +8,7 @@ Keep plans short and current. Replace stale detail with the latest verified stat
 
 ### Task
 
-Implement Phase 2 memory operations: add staged memory promotion rules, pruning guidance, bucket-selection guidance, a memory-ops capability, and a focused verification scenario.
+Finalize Phase 2 memory operations by adding a canonical candidate-memory artifact, explicit update triggers and review flow, and a verification scenario that exercises discard, stage, and promote decisions.
 
 ### Status
 
@@ -19,9 +19,10 @@ Implement Phase 2 memory operations: add staged memory promotion rules, pruning 
 ### Success Criteria
 
 - memory updates are explicitly staged before promotion.
+- candidate memory has a canonical home and review workflow.
 - `AGENTS.md` defines memory promotion, pruning, stale-memory detection, and bucket-selection rules.
 - a dedicated memory-ops guidance module or skill exists.
-- the verification suite includes a memory promotion versus non-promotion test.
+- the verification suite includes a memory promotion test that exercises discard, stage, and promote decisions.
 - long-term memory remains selective and resistant to noise.
 - verification evidence is recorded.
 - review reaches a clear acceptance decision.
@@ -33,18 +34,18 @@ Implement Phase 2 memory operations: add staged memory promotion rules, pruning 
 
 ### Steps
 
-1. Extend `AGENTS.md` with staged memory operations, promotion checklist, pruning cadence, stale-memory rules, and bucket guidance.
-2. Add a memory-ops skill that explains how the Manager evaluates and applies memory changes.
-3. Add a verification scenario that tests promote versus do-not-promote decisions.
-4. Register the new memory test in the verification index and update high-level docs if needed.
-5. Run checks on the new memory rules, skill, and verification coverage.
+1. Add a canonical `memory/candidates.md` artifact with review and promotion workflow.
+2. Extend `AGENTS.md` and `memory-ops` guidance with candidate staging location, update triggers, and review flow.
+3. Update the verification scenario so it exercises discard, stage, and promote decisions.
+4. Register any memory-documentation updates in the high-level docs and roadmap/status state.
+5. Run checks on the candidate-memory artifact, memory rules, and verification coverage.
 6. Close the task with validation and review evidence.
 
 ### Validation
 
-- commands run: `Test-Path skills/memory-ops/SKILL.md`, `Select-String` for three-state memory sections in `AGENTS.md`, `Get-Content` review of `examples/verification/memory-promotion-test.md`, `git diff` on memory-operations files
+- commands run: `Test-Path memory/candidates.md`, `Test-Path skills/memory-ops/SKILL.md`, `Select-String` for candidate-memory and update-trigger sections in `AGENTS.md`, `Get-Content` review of `examples/verification/memory-promotion-test.md`, `git diff` on memory-operations files
 - tests executed: none
-- manual checks: reviewed the memory-promotion scenario against the new three-state model and confirmed the rules support discard, stage, and promote decisions with explicit bucket guidance
+- manual checks: reviewed the memory-promotion scenario against the completed Phase 2 model and confirmed the rules support discard, stage, and promote decisions with explicit bucket guidance and a canonical candidate-memory staging location
 - review status: accepted
 
 ### Handoffs
@@ -56,8 +57,8 @@ Implement Phase 2 memory operations: add staged memory promotion rules, pruning 
 
 ### Notes
 
-This task implements the first decision-making layer of Phase 2 rather than changing the existing memory entries themselves.
-The memory-promotion verification passed after clarifying that the scenario is testing promotion logic rather than duplicate detection.
+This task should complete the operational memory workflow without adding noisy long-term memory entries.
+Memory test result: item 1 discard, item 2 promote to `lessons`, item 3 promote to `decisions`, item 4 discard, item 5 stage in `memory/candidates.md` targeting `style` or `lessons` pending more evidence.
 
 ## Plan Template
 

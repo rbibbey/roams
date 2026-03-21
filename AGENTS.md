@@ -271,6 +271,7 @@ Use three memory states:
 Temporary working context belongs in active task artifacts such as `.agent/PLANS.md`, not in long-term memory.
 
 Candidate memory is potentially reusable signal that is not yet proven durable enough for promotion.
+Stage candidate memory in `memory/candidates.md`.
 
 Promote information only if it is:
 
@@ -291,6 +292,17 @@ Do not promote:
 
 If durability is unclear, stage the information as candidate memory instead of promoting it immediately.
 
+### Memory Update Triggers
+
+Consider a memory update when:
+
+- a repeated success pattern changes how work should be done
+- a repeated failure pattern changes future execution or review behavior
+- a project-level choice will affect future implementation
+- a preference is stable enough to guide future work
+
+Do not update long-term memory just because information was useful once.
+
 ### Memory Promotion Checklist
 
 Before promoting long-term memory, confirm:
@@ -308,6 +320,8 @@ Review memory periodically and when repeated changes accumulate.
 - merge duplicates
 - shorten entries that have become too verbose
 - prefer deletion over retaining low-signal memory
+
+Review `memory/candidates.md` during memory updates and at natural checkpoints such as postmortems, repeated task patterns, or roadmap phase completion.
 
 ### Stale-Memory Detection
 

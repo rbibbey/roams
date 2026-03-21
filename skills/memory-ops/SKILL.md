@@ -11,10 +11,10 @@ Keep long-term memory selective, durable, and reviewable.
 
 1. Identify the new information or lesson being considered.
 2. Decide whether it is temporary working context, a memory candidate, or durable long-term memory.
-3. If it is only a candidate, stage it without promoting it yet.
+3. If it is only a candidate, stage it in `memory/candidates.md` without promoting it yet.
 4. If it is durable, choose the correct memory bucket.
 5. Apply the promotion checklist before updating long-term memory.
-6. Periodically review memory for stale, duplicate, or no-longer-useful entries.
+6. Periodically review `memory/candidates.md` and long-term memory for stale, duplicate, or no-longer-useful entries.
 
 ## Memory Categories
 
@@ -57,8 +57,18 @@ Promote only if the information is:
 
 If any of those are unclear, stage it as a candidate instead of promoting it immediately.
 
+## Update Triggers
+
+Consider memory updates when:
+
+- a repeated success changes future execution behavior
+- a repeated failure reveals a durable lesson
+- a project-level choice will affect future work
+- a preference becomes stable enough to guide future tasks
+
 ## Pruning And Review Rules
 
+- Review `memory/candidates.md` before adding new long-term memory.
 - Remove stale entries that no longer reflect actual practice.
 - Merge duplicate entries that express the same rule.
 - Rewrite overly long entries into shorter operational guidance.

@@ -20,6 +20,7 @@ Unless noted otherwise, assume none of these observations are already present in
 2. A repeated pattern emerged that vague UI tasks go better when the theme is defined before component work starts.
 3. A project-level choice was made to keep research Manager-owned until repeated evidence justifies a separate Researcher role.
 4. A transient test failure occurred once because of a typo in a local file path.
+5. A possible pattern emerged that adding explicit severity labels to review findings may improve follow-up quality, but this has only been seen in one meaningful review cycle so far.
 
 ## What The Test Should Check
 
