@@ -4,12 +4,12 @@ This repository provides a reusable ROAMS starter template for running software 
 
 # Current Stage
 
-The project is in an early v1 stage where the core operating model, role skills, and verification suite are being validated and refined.
+The project is in an early post-v1 stage with the core operating model, role skills, research capability, verification suite, and roadmap governance in place.
 
 # Near-Term Goals
 
-The next steps are to complete workflow validation, tighten the role definitions, and expand the template only where repeated usage proves it is helpful.
+The next steps are to implement Phase 2 memory operations, continue refining the workflow through verification, and expand the template only where repeated usage proves it is helpful.
 
 # Open Questions
 
-The main open questions are which additional roles, automations, or subagent patterns will provide real value without making the operating model too heavy.
+The main open questions are which capabilities will justify promotion into dedicated roles and how far subagent orchestration should go before it adds more complexity than value.

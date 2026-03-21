@@ -15,6 +15,7 @@ The suite is designed to answer two questions:
 - [qa-role-test.md](C:\git\codex-roams\examples\verification\qa-role-test.md): validates testing and reporting workflow
 - [reviewer-role-test.md](C:\git\codex-roams\examples\verification\reviewer-role-test.md): validates final review behavior
 - [research-capability-test.md](C:\git\codex-roams\examples\verification\research-capability-test.md): validates canonical-source research and briefing
+- [roadmap-governance-test.md](C:\git\codex-roams\examples\verification\roadmap-governance-test.md): validates roadmap, status, and active-plan separation
 - [standard-workflow-test.md](C:\git\codex-roams\examples\verification\standard-workflow-test.md): validates the full Manager -> specialist -> validation -> review -> closure flow
 
 ## How To Use The Suite
@@ -22,9 +23,11 @@ The suite is designed to answer two questions:
 Run the tests in this order:
 
 1. role tests
-2. standard workflow test
+2. capability tests
+3. governance tests
+4. standard workflow test
 
-The role tests should be run first so each role can be tuned independently before validating orchestration across the full system.
+The role tests should be run first so each role can be tuned independently before validating capability behavior, document governance, and orchestration across the full system.
 
 ## Evaluation Rules
 

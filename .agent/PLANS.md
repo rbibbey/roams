@@ -8,7 +8,7 @@ Keep plans short and current. Replace stale detail with the latest verified stat
 
 ### Task
 
-Create or update `docs/status.md` so it summarizes the repository's current purpose, current stage, near-term goals, and open questions. Update `README.md` to link to the status document from the repository layout.
+Add `docs/roadmap.md` as the source of truth for post-v1 ROAMS feature work, document the three-document model, and add roadmap-focused verification coverage.
 
 ### Status
 
@@ -18,43 +18,46 @@ Create or update `docs/status.md` so it summarizes the repository's current purp
 
 ### Success Criteria
 
-- `docs/status.md` exists.
-- `docs/status.md` includes sections for purpose, current stage, near-term goals, and open questions.
-- `README.md` links to `docs/status.md` from the repository layout section.
+- `docs/roadmap.md` exists and includes the agreed roadmap structure.
+- `docs/roadmap.md` sequences the remaining feature program with acceptance criteria.
+- promotion candidates are tracked as capability-first candidates rather than committed roles.
+- `README.md` documents the roadmap and the three-document model.
+- the verification suite includes a roadmap-specific test.
 - verification evidence is recorded.
 - review reaches a clear acceptance decision.
 
 ### Risks
 
-- `docs/status.md` already exists from a prior role test and must be updated rather than recreated.
-- README changes should remain minimal and avoid duplicating the status content inline.
+- roadmap content could drift into active implementation detail rather than long-horizon sequencing.
+- the roadmap and status docs must remain clearly separated in responsibility.
 
 ### Steps
 
-1. Gather current repository context from `README.md` and `docs/status.md`.
-2. Update `docs/status.md` to match the requested section set.
-3. Add the `docs/status.md` link to the README repository layout.
-4. Run QA checks on file existence, section coverage, and link presence.
-5. Run Reviewer acceptance checks and close the task.
+1. Add `docs/roadmap.md` with the agreed sections, phases, promotion candidates, deferred items, and exit criteria.
+2. Update `README.md` to reference the roadmap and explain the roadmap/status/active-plan split.
+3. Update `docs/status.md` so the current snapshot reflects the existence of the roadmap and the next active phase.
+4. Add a roadmap-focused verification scenario and register it in the verification index.
+5. Run checks on document presence, roadmap structure, ordering, and separation of concerns.
+6. Close the task with validation and review evidence.
 
 ### Validation
 
-- commands run: `Test-Path docs/status.md`, `Select-String` for required headings in `docs/status.md`, `Select-String` for the `docs/status.md` link in `README.md`, `git diff` on the task files
+- commands run: `Select-String` for fixed sections and Phase 2 in `docs/roadmap.md`, `Select-String` for roadmap references and Document Model in `README.md`, `Test-Path` for `examples/verification/roadmap-governance-test.md`, `git diff` on roadmap-related files
 - tests executed: none
-- manual checks: reviewed updated `docs/status.md` content for requested coverage and confirmed the README layout entry
+- manual checks: reviewed `docs/roadmap.md` for phase ordering, capability-first promotion candidates, and explicit separation from `docs/status.md` and `.agent/PLANS.md`
 - review status: accepted
 
 ### Handoffs
 
 - from: Manager
 - to: Coder, QA, Reviewer
-- deliverable: updated status doc, README link, validation evidence, acceptance decision
+- deliverable: roadmap doc, README/status updates, verification test, validation evidence, acceptance decision
 - open questions: none
 
 ### Notes
 
-This task reuses an existing `docs/status.md` created during an earlier role test.
-QA passed and Reviewer accepted the changes without material findings.
+This task establishes roadmap governance without beginning Phase 2 implementation itself.
+QA-style structure checks passed and the roadmap-governance review found no material issues.
 
 ## Plan Template
 

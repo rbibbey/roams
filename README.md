@@ -40,6 +40,7 @@ The system is also feedback-driven:
 - [memory/decisions.md](C:\git\codex-roams\memory\decisions.md): important decisions
 - [memory/lessons.md](C:\git\codex-roams\memory\lessons.md): durable lessons
 - [docs/status.md](C:\git\codex-roams\docs\status.md): current repository purpose, stage, goals, and open questions
+- [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md): long-horizon feature sequencing and phase definitions
 - [skills/manager/SKILL.md](C:\git\codex-roams\skills\manager\SKILL.md): orchestration skill
 - [skills/research/SKILL.md](C:\git\codex-roams\skills\research\SKILL.md): Manager-owned research capability
 - [skills/ui-designer/SKILL.md](C:\git\codex-roams\skills\ui-designer\SKILL.md): design skill
@@ -57,9 +58,20 @@ Use this sequence when starting a new project from this template:
 2. Update [AGENTS.md](C:\git\codex-roams\AGENTS.md) with project-specific constraints, conventions, and definitions of done.
 3. Add or revise entries in [memory/style.md](C:\git\codex-roams\memory\style.md) to reflect how you want work performed.
 4. Record any initial architecture choices in [memory/decisions.md](C:\git\codex-roams\memory\decisions.md).
-5. Expand the role skills only when the project needs more specialized behavior.
-6. For non-trivial work, instantiate the template in [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) and let the Manager lead the lifecycle.
-7. After meaningful work, promote only durable signal into the memory files.
+5. Establish [docs/status.md](C:\git\codex-roams\docs\status.md) as the current project snapshot and [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md) as the long-horizon feature roadmap.
+6. Expand the role skills only when the project needs more specialized behavior.
+7. For non-trivial work, instantiate the template in [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) and let the Manager lead the lifecycle.
+8. After meaningful work, promote only durable signal into the memory files.
+
+## Document Model
+
+ROAMS uses three different planning/state documents with distinct responsibilities:
+
+- [docs/status.md](C:\git\codex-roams\docs\status.md): current state, current stage, near-term goals, and open questions
+- [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md): long-horizon feature sequencing, promotion candidates, and phase exit criteria
+- [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md): active task execution plan for the work currently being performed
+
+Keep these documents separate. Status is not backlog, roadmap is not active execution detail, and plans are not long-horizon strategy.
 
 ## Default Workflow
 
