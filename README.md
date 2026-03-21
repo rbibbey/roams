@@ -41,6 +41,7 @@ The system is also feedback-driven:
 - [memory/lessons.md](C:\git\codex-roams\memory\lessons.md): durable lessons
 - [docs/status.md](C:\git\codex-roams\docs\status.md): current repository purpose, stage, goals, and open questions
 - [skills/manager/SKILL.md](C:\git\codex-roams\skills\manager\SKILL.md): orchestration skill
+- [skills/research/SKILL.md](C:\git\codex-roams\skills\research\SKILL.md): Manager-owned research capability
 - [skills/ui-designer/SKILL.md](C:\git\codex-roams\skills\ui-designer\SKILL.md): design skill
 - [skills/coder/SKILL.md](C:\git\codex-roams\skills\coder\SKILL.md): implementation skill
 - [skills/qa/SKILL.md](C:\git\codex-roams\skills\qa\SKILL.md): validation skill
@@ -66,12 +67,42 @@ The v1 workflow is:
 
 1. Manager classifies the task.
 2. Manager gathers the minimum required context.
-3. Manager creates or updates the active plan.
-4. Manager delegates to specialist roles only when useful.
-5. Specialist roles execute bounded work and return evidence.
-6. QA and Reviewer validate non-trivial work.
-7. Failed checks trigger rework with explicit evidence and a revised next step.
-8. Manager closes the task and decides whether memory should change.
+3. Manager triggers research when external knowledge must be verified.
+4. Manager creates or updates the active plan.
+5. Manager delegates to specialist roles only when useful.
+6. Specialist roles execute bounded work and return evidence.
+7. QA and Reviewer validate non-trivial work.
+8. Failed checks trigger rework with explicit evidence and a revised next step.
+9. Manager closes the task and decides whether memory should change.
+
+## Research Capability
+
+Research is a Manager-owned capability rather than a standalone role in v1.
+
+Use research when:
+
+- implementation depends on external documentation or APIs
+- current technical behavior must be verified
+- multiple technical options need comparison
+- a failed pass suggests an external assumption may be wrong
+
+The default source preference is:
+
+1. official and canonical sources
+2. first-party technical artifacts
+3. high-quality secondary sources
+4. community or social sources only as a last resort
+
+Research findings should usually be shared as a short Research Brief containing:
+
+- question
+- recommendation
+- verified findings
+- inference, if any
+- sources
+- constraints or caveats
+- implementation impact
+- open questions
 
 ## Adding Roles Over Time
 

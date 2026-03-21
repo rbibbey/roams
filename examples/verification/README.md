@@ -14,6 +14,7 @@ The suite is designed to answer two questions:
 - [coder-role-test.md](C:\git\codex-roams\examples\verification\coder-role-test.md): validates implementation workflow
 - [qa-role-test.md](C:\git\codex-roams\examples\verification\qa-role-test.md): validates testing and reporting workflow
 - [reviewer-role-test.md](C:\git\codex-roams\examples\verification\reviewer-role-test.md): validates final review behavior
+- [research-capability-test.md](C:\git\codex-roams\examples\verification\research-capability-test.md): validates canonical-source research and briefing
 - [standard-workflow-test.md](C:\git\codex-roams\examples\verification\standard-workflow-test.md): validates the full Manager -> specialist -> validation -> review -> closure flow
 
 ## How To Use The Suite

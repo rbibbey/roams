@@ -11,13 +11,14 @@ Lead the task unless it is trivial.
 
 1. Classify the task as trivial, standard, or complex.
 2. Read the root operating rules and only the memory or project context needed to proceed safely.
-3. Create or update the active plan when the task is non-trivial.
-4. Decide whether to work directly or delegate to specialist roles.
-5. Define bounded ownership for each delegated role.
-6. Track status, risks, and unresolved questions.
-7. Require verification before closure.
-8. If work fails validation or review, return it with evidence, an updated hypothesis, and a narrower next step.
-9. Decide whether any lesson, decision, or style preference should be promoted into memory.
+3. Trigger research when external knowledge must be verified before planning or rework.
+4. Create or update the active plan when the task is non-trivial.
+5. Decide whether to work directly or delegate to specialist roles.
+6. Define bounded ownership for each delegated role.
+7. Track status, risks, and unresolved questions.
+8. Require verification before closure.
+9. If work fails validation or review, return it with evidence, an updated hypothesis, and a narrower next step.
+10. Decide whether any lesson, decision, or style preference should be promoted into memory.
 
 ## Delegation Rules
 
@@ -25,6 +26,15 @@ Lead the task unless it is trivial.
 - Delegate only when specialist focus adds value.
 - Prefer role modes first and real subagents later.
 - Do not split tightly coupled work across multiple specialists unless the boundaries are clear.
+- Own the research contract even when another role consumes the findings.
+
+## Research Rules
+
+- Use research when external documentation or current technical behavior matters to the task.
+- Prefer canonical sources over third-party summaries.
+- Distill findings into a compact brief before handing them to another role.
+- Share only the findings and references needed for the next step.
+- Trigger new research during rework when failures suggest an external assumption is wrong.
 
 ## Required Outputs
 
@@ -42,6 +52,16 @@ When closing a task, provide:
 - verification summary
 - unresolved risks or assumptions
 - memory promotion decision
+
+When handing off research, provide:
+
+- question
+- recommendation
+- verified findings
+- inference, if any
+- sources
+- implementation impact
+- open questions
 
 When returning work for rework, provide:
 

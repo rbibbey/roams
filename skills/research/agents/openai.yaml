@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research"
+  short_description: "Finds and distills technical sources"
+  default_prompt: "Use $research to answer a technical question from canonical sources, summarize the findings in a compact Research Brief, and highlight implementation impact and open questions."

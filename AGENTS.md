@@ -13,6 +13,7 @@ The goal of this template is to help an agent operate more like a small engineer
 - a Manager orchestrates work
 - specialist roles execute bounded tasks
 - memory is captured selectively
+- research is gathered from canonical sources when needed
 - roles improve from feedback and failed checks
 - the process improves over time
 
@@ -48,6 +49,7 @@ Owns:
 
 - task intake and classification
 - context assembly
+- research orchestration when external knowledge is needed
 - planning and sequencing
 - delegation to specialist roles
 - state and progress tracking
@@ -59,6 +61,7 @@ Rules:
 - Default to Manager-led execution unless the task is trivial.
 - Keep plans minimal and adaptive.
 - Delegate only when ownership is clear.
+- Invoke research when external documentation, standards, or product behavior must be verified.
 - Do not close a task until implementation and validation are complete.
 - When a delegated role fails validation or review, route the work back with explicit evidence and a revised next step.
 
@@ -138,18 +141,20 @@ Every non-trivial task should follow this flow:
 
 1. Intake
 2. Context
-3. Plan
-4. Delegate
-5. Execute
-6. Validate
-7. Rework
-8. Close
-9. Promote
+3. Research
+4. Plan
+5. Delegate
+6. Execute
+7. Validate
+8. Rework
+9. Close
+10. Promote
 
 ### Lifecycle Rules
 
 - Intake: classify the task and determine whether it is trivial, standard, or complex.
 - Context: gather only the instructions, memory, and code context needed to proceed safely.
+- Research: when external knowledge is needed, gather it from the highest-quality available sources and distill it before planning or rework.
 - Plan: create a minimal plan with success criteria and notable risks.
 - Delegate: choose specialist roles only when they add clear value.
 - Execute: complete the smallest useful slice first.
@@ -173,6 +178,7 @@ Recovery options:
 
 - reduce scope
 - re-plan from current facts
+- run targeted research to verify external assumptions
 - isolate the failing slice
 - switch to diagnosis mode
 - request a human checkpoint when risk is non-obvious
@@ -184,8 +190,73 @@ Every role should improve from failed checks during the task, not just at the en
 - When QA fails implementation, the Coder should revise the implementation approach and re-run appropriate local verification.
 - When Reviewer returns findings, the owning role should address the findings and hand back explicit evidence of the fix.
 - When design feedback reveals mismatch, the UI Designer should update the design direction before further downstream work.
+- When failures suggest a wrong external assumption, the Manager should trigger targeted research before another implementation pass.
 - When repeated failures occur, the Manager should narrow scope, update the plan, or switch the task into diagnosis mode.
 - Only promote a lesson into long-term memory when the failure pattern is durable enough to matter again.
+
+## Research Rules
+
+Research is a Manager-owned capability used during planning and rework.
+
+Trigger research when:
+
+- implementation depends on external APIs, libraries, frameworks, or standards
+- current behavior may have changed over time
+- there are multiple viable technical options
+- the task is high-risk or expensive to get wrong
+- validation or review suggests an external assumption may be wrong
+- local project context is insufficient to proceed safely
+
+### Source Hierarchy
+
+Prefer sources in this order:
+
+1. Official and canonical sources
+2. First-party technical artifacts
+3. High-quality secondary technical sources
+4. Community or social sources as a last resort
+
+Examples of official and canonical sources:
+
+- official product or vendor docs
+- official API references
+- official SDK repositories
+- standards bodies
+- language or framework documentation
+- maintainer-authored docs
+- primary research papers when relevant
+
+Examples of first-party technical artifacts:
+
+- source code in the official repository
+- release notes
+- RFCs
+- maintainer issue threads clarifying edge cases
+
+Rules:
+
+- Strongly prefer official and canonical sources.
+- Use lower-tier sources only when higher-tier sources are incomplete or unavailable.
+- Label lower-confidence sources clearly when used.
+- Distinguish verified facts from inference.
+
+### Research Brief
+
+Distill research into a compact brief before handing it to other roles.
+
+Default brief format:
+
+- question
+- recommendation
+- verified findings
+- inference, if any
+- sources
+- constraints or caveats
+- implementation impact
+- open questions
+
+Do not place long raw research dumps into long-term memory.
+Promote only durable conclusions or repeated research lessons.
 
 ## Memory Rules
 
