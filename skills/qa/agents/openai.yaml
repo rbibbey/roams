@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA"
+  short_description: "Runs validation and reports confidence"
+  default_prompt: "Use $qa to choose the right validation strategy, run relevant checks, confirm behavior, and report defects, gaps, and confidence to the Manager."

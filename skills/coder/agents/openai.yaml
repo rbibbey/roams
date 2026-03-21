@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coder"
+  short_description: "Implements code and verifies locally"
+  default_prompt: "Use $coder to plan the implementation, change the code, add or update tests, verify locally, and return a concise handoff to the Manager."

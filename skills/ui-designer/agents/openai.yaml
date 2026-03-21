@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Designer"
+  short_description: "Shapes theme, visuals, and UX"
+  default_prompt: "Use $ui-designer to establish theme and constraints, define visual direction, produce implementation-ready UI guidance, and return the result to the Manager."

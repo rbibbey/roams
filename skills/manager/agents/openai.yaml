@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manager"
+  short_description: "Orchestrates planning and delivery"
+  default_prompt: "Use $manager to classify the task, plan the work, delegate bounded responsibilities, manage progress, and close the task."

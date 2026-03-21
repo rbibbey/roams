@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reviewer"
+  short_description: "Audits readiness, quality, and safety"
+  default_prompt: "Use $reviewer to independently review requirement coverage, correctness, code quality, maintainability, and security before the Manager closes the task."
