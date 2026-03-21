@@ -4,7 +4,7 @@ This repository provides a reusable ROAMS starter template for running software 
 
 # Current Stage
 
-The project is in an early post-v1 stage with the core operating model, role skills, research capability, verification suite, and roadmap governance in place.
+The project is in an early post-v1 stage with the core operating model, role skills, research capability, roadmap governance, and Phase 2 memory operations now in progress.
 
 # Near-Term Goals
 

@@ -8,7 +8,7 @@ Keep plans short and current. Replace stale detail with the latest verified stat
 
 ### Task
 
-Add `docs/roadmap.md` as the source of truth for post-v1 ROAMS feature work, document the three-document model, and add roadmap-focused verification coverage.
+Implement Phase 2 memory operations: add staged memory promotion rules, pruning guidance, bucket-selection guidance, a memory-ops capability, and a focused verification scenario.
 
 ### Status
 
@@ -18,46 +18,46 @@ Add `docs/roadmap.md` as the source of truth for post-v1 ROAMS feature work, doc
 
 ### Success Criteria
 
-- `docs/roadmap.md` exists and includes the agreed roadmap structure.
-- `docs/roadmap.md` sequences the remaining feature program with acceptance criteria.
-- promotion candidates are tracked as capability-first candidates rather than committed roles.
-- `README.md` documents the roadmap and the three-document model.
-- the verification suite includes a roadmap-specific test.
+- memory updates are explicitly staged before promotion.
+- `AGENTS.md` defines memory promotion, pruning, stale-memory detection, and bucket-selection rules.
+- a dedicated memory-ops guidance module or skill exists.
+- the verification suite includes a memory promotion versus non-promotion test.
+- long-term memory remains selective and resistant to noise.
 - verification evidence is recorded.
 - review reaches a clear acceptance decision.
 
 ### Risks
 
-- roadmap content could drift into active implementation detail rather than long-horizon sequencing.
-- the roadmap and status docs must remain clearly separated in responsibility.
+- memory rules could become too heavy for routine use.
+- staged memory guidance must clarify where temporary notes live without turning memory into a dumping ground.
 
 ### Steps
 
-1. Add `docs/roadmap.md` with the agreed sections, phases, promotion candidates, deferred items, and exit criteria.
-2. Update `README.md` to reference the roadmap and explain the roadmap/status/active-plan split.
-3. Update `docs/status.md` so the current snapshot reflects the existence of the roadmap and the next active phase.
-4. Add a roadmap-focused verification scenario and register it in the verification index.
-5. Run checks on document presence, roadmap structure, ordering, and separation of concerns.
+1. Extend `AGENTS.md` with staged memory operations, promotion checklist, pruning cadence, stale-memory rules, and bucket guidance.
+2. Add a memory-ops skill that explains how the Manager evaluates and applies memory changes.
+3. Add a verification scenario that tests promote versus do-not-promote decisions.
+4. Register the new memory test in the verification index and update high-level docs if needed.
+5. Run checks on the new memory rules, skill, and verification coverage.
 6. Close the task with validation and review evidence.
 
 ### Validation
 
-- commands run: `Select-String` for fixed sections and Phase 2 in `docs/roadmap.md`, `Select-String` for roadmap references and Document Model in `README.md`, `Test-Path` for `examples/verification/roadmap-governance-test.md`, `git diff` on roadmap-related files
+- commands run: `Test-Path skills/memory-ops/SKILL.md`, `Select-String` for three-state memory sections in `AGENTS.md`, `Get-Content` review of `examples/verification/memory-promotion-test.md`, `git diff` on memory-operations files
 - tests executed: none
-- manual checks: reviewed `docs/roadmap.md` for phase ordering, capability-first promotion candidates, and explicit separation from `docs/status.md` and `.agent/PLANS.md`
+- manual checks: reviewed the memory-promotion scenario against the new three-state model and confirmed the rules support discard, stage, and promote decisions with explicit bucket guidance
 - review status: accepted
 
 ### Handoffs
 
 - from: Manager
 - to: Coder, QA, Reviewer
-- deliverable: roadmap doc, README/status updates, verification test, validation evidence, acceptance decision
+- deliverable: updated memory rules, memory-ops skill, memory verification test, validation evidence, acceptance decision
 - open questions: none
 
 ### Notes
 
-This task establishes roadmap governance without beginning Phase 2 implementation itself.
-QA-style structure checks passed and the roadmap-governance review found no material issues.
+This task implements the first decision-making layer of Phase 2 rather than changing the existing memory entries themselves.
+The memory-promotion verification passed after clarifying that the scenario is testing promotion logic rather than duplicate detection.
 
 ## Plan Template
 

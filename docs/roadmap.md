@@ -24,7 +24,7 @@ Current roadmap state:
 
 - completed: v1 foundation
 - completed: Manager-owned research capability
-- next active phase: Phase 2 - Memory Operations
+- in progress: Phase 2 - Memory Operations
 
 Phase 2 should begin before additional role growth or subagent expansion.
 

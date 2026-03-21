@@ -262,6 +262,16 @@ Promote only durable conclusions or repeated research lessons.
 
 Memory must be pragmatic and selective.
 
+Use three memory states:
+
+- temporary working context
+- candidate memory
+- long-term memory
+
+Temporary working context belongs in active task artifacts such as `.agent/PLANS.md`, not in long-term memory.
+
+Candidate memory is potentially reusable signal that is not yet proven durable enough for promotion.
+
 Promote information only if it is:
 
 - likely to matter again
@@ -269,6 +279,7 @@ Promote information only if it is:
 - not already documented elsewhere
 - specific enough to guide future work
 - stable enough to remain useful
+- short enough to stay reviewable
 
 Do not promote:
 
@@ -278,11 +289,47 @@ Do not promote:
 - transient debugging noise
 - preferences that are not yet established
 
+If durability is unclear, stage the information as candidate memory instead of promoting it immediately.
+
+### Memory Promotion Checklist
+
+Before promoting long-term memory, confirm:
+
+- this is not just task-local working context
+- the information is strong enough to affect future behavior
+- the correct bucket is clear
+- the wording is concise and operational
+
+### Memory Pruning And Review
+
+Review memory periodically and when repeated changes accumulate.
+
+- remove stale entries that no longer reflect actual practice
+- merge duplicates
+- shorten entries that have become too verbose
+- prefer deletion over retaining low-signal memory
+
+### Stale-Memory Detection
+
+Treat memory as stale when:
+
+- current practice no longer matches the entry
+- the same idea is already captured better elsewhere
+- the entry has become too vague to guide action
+- the original reason for keeping it no longer applies
+
 ## Memory Buckets
 
 - `memory/style.md`: stable preferences about how work should be done
 - `memory/decisions.md`: important project decisions and why they were made
 - `memory/lessons.md`: reusable lessons from repeated successes or failures
+
+Bucket guidance:
+
+- use `style` for stable preferences and working style defaults
+- use `decisions` for project-level choices with durable rationale
+- use `lessons` for repeatable patterns learned from successes or failures
+- use no long-term bucket when the information is task-local, obvious, or insufficiently durable
 
 ## Role vs Subagent Rule
 
