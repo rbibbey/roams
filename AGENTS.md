@@ -13,6 +13,7 @@ The goal of this template is to help an agent operate more like a small engineer
 - a Manager orchestrates work
 - specialist roles execute bounded tasks
 - memory is captured selectively
+- roles improve from feedback and failed checks
 - the process improves over time
 
 Use the smallest process that safely completes the task.
@@ -59,6 +60,7 @@ Rules:
 - Keep plans minimal and adaptive.
 - Delegate only when ownership is clear.
 - Do not close a task until implementation and validation are complete.
+- When a delegated role fails validation or review, route the work back with explicit evidence and a revised next step.
 
 ### UI Designer
 
@@ -76,6 +78,7 @@ Rules:
 - Extend baseline design principles with project-specific details.
 - Use external tools or MCP integrations only when they materially help.
 - Hand implementation-ready output back to the Manager.
+- When design feedback identifies gaps, revise the design direction before producing more assets or implementation guidance.
 
 ### Coder
 
@@ -93,6 +96,7 @@ Rules:
 - Prefer existing patterns over invention.
 - Verify code locally before handoff.
 - Report remaining risks or assumptions to the Manager.
+- When QA or review fails the work, incorporate the evidence, adjust the implementation approach, and re-verify before handoff.
 
 ### QA
 
@@ -109,6 +113,7 @@ Rules:
 - Match validation depth to task risk.
 - Focus on behavior, not just test execution.
 - Report defects, confidence, and gaps clearly.
+- When defects recur, refine the validation strategy so the next pass is more likely to catch the real issue quickly.
 
 ### Reviewer
 
@@ -125,6 +130,7 @@ Rules:
 - Validate that the solution matches the plan.
 - Flag correctness or readiness gaps before closure.
 - Treat review as independent from implementation.
+- When returning work, provide actionable findings that improve the next implementation or validation pass.
 
 ## Task Lifecycle
 
@@ -136,8 +142,9 @@ Every non-trivial task should follow this flow:
 4. Delegate
 5. Execute
 6. Validate
-7. Close
-8. Promote
+7. Rework
+8. Close
+9. Promote
 
 ### Lifecycle Rules
 
@@ -147,6 +154,7 @@ Every non-trivial task should follow this flow:
 - Delegate: choose specialist roles only when they add clear value.
 - Execute: complete the smallest useful slice first.
 - Validate: verify behavior, quality, and requirement coverage.
+- Rework: if validation or review fails, route the work back to the owning role with evidence, an updated hypothesis, and a narrower next step.
 - Close: summarize outcome, unresolved risks, and final status.
 - Promote: record only durable, reusable lessons.
 
@@ -168,6 +176,16 @@ Recovery options:
 - isolate the failing slice
 - switch to diagnosis mode
 - request a human checkpoint when risk is non-obvious
+
+## Feedback And Relearning Rules
+
+Every role should improve from failed checks during the task, not just at the end.
+
+- When QA fails implementation, the Coder should revise the implementation approach and re-run appropriate local verification.
+- When Reviewer returns findings, the owning role should address the findings and hand back explicit evidence of the fix.
+- When design feedback reveals mismatch, the UI Designer should update the design direction before further downstream work.
+- When repeated failures occur, the Manager should narrow scope, update the plan, or switch the task into diagnosis mode.
+- Only promote a lesson into long-term memory when the failure pattern is durable enough to matter again.
 
 ## Memory Rules
 

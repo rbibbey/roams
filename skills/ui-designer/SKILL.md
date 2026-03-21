@@ -14,7 +14,8 @@ Start from theme and constraints, not components.
 3. Define the visual and interaction principles that should guide implementation.
 4. Produce implementation-ready guidance, assets, or review notes.
 5. Review the design output for coherence before handoff.
-6. Return the result to the Manager with clear design intent and constraints.
+6. If feedback reveals mismatch or missing constraints, revise the design direction before further downstream work.
+7. Return the result to the Manager with clear design intent and constraints.
 
 ## Design Rules
 
@@ -36,3 +37,9 @@ Provide one or more of:
 - implementation constraints
 
 Include any open design questions that need Manager input.
+
+## Feedback Loop
+
+- Treat feedback as signal to refine theme, constraints, or interaction direction.
+- Revise the design rationale before generating more detailed output.
+- Return updated guidance with the specific issue addressed.

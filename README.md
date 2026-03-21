@@ -25,6 +25,13 @@ In practice, ROAMS is a small AI operating system for project delivery:
 - `Memory` stores only durable signal
 - `Skills` let the system specialize and grow over time
 
+The system is also feedback-driven:
+
+- failed QA sends work back with evidence
+- failed review sends work back with actionable findings
+- the owning role adjusts its next pass instead of repeating the same attempt
+- repeated failures can trigger re-planning or diagnosis mode
+
 ## Repository Layout
 
 - [AGENTS.md](C:\git\codex-roams\AGENTS.md): root operating contract
@@ -32,12 +39,14 @@ In practice, ROAMS is a small AI operating system for project delivery:
 - [memory/style.md](C:\git\codex-roams\memory\style.md): stable preferences
 - [memory/decisions.md](C:\git\codex-roams\memory\decisions.md): important decisions
 - [memory/lessons.md](C:\git\codex-roams\memory\lessons.md): durable lessons
+- [docs/status.md](C:\git\codex-roams\docs\status.md): current repository purpose, stage, goals, and open questions
 - [skills/manager/SKILL.md](C:\git\codex-roams\skills\manager\SKILL.md): orchestration skill
 - [skills/ui-designer/SKILL.md](C:\git\codex-roams\skills\ui-designer\SKILL.md): design skill
 - [skills/coder/SKILL.md](C:\git\codex-roams\skills\coder\SKILL.md): implementation skill
 - [skills/qa/SKILL.md](C:\git\codex-roams\skills\qa\SKILL.md): validation skill
 - [skills/reviewer/SKILL.md](C:\git\codex-roams\skills\reviewer\SKILL.md): acceptance skill
 - [examples/simple-workflow-task.md](C:\git\codex-roams\examples\simple-workflow-task.md): verification exercise
+- [examples/verification/README.md](C:\git\codex-roams\examples\verification\README.md): reusable role and workflow verification suite
 
 ## Bootstrap Process
 
@@ -61,7 +70,8 @@ The v1 workflow is:
 4. Manager delegates to specialist roles only when useful.
 5. Specialist roles execute bounded work and return evidence.
 6. QA and Reviewer validate non-trivial work.
-7. Manager closes the task and decides whether memory should change.
+7. Failed checks trigger rework with explicit evidence and a revised next step.
+8. Manager closes the task and decides whether memory should change.
 
 ## Adding Roles Over Time
 
@@ -85,3 +95,5 @@ Do not add a role just to mirror a job title. Add it when it creates clearer own
 ## Verification Exercise
 
 Use [examples/simple-workflow-task.md](C:\git\codex-roams\examples\simple-workflow-task.md) as a small end-to-end test of the operating model.
+
+For more complete validation, use the suite in [examples/verification/README.md](C:\git\codex-roams\examples\verification\README.md). It separates role-level verification from a standard end-to-end workflow test so the operating model can be tuned incrementally.

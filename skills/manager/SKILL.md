@@ -16,7 +16,8 @@ Lead the task unless it is trivial.
 5. Define bounded ownership for each delegated role.
 6. Track status, risks, and unresolved questions.
 7. Require verification before closure.
-8. Decide whether any lesson, decision, or style preference should be promoted into memory.
+8. If work fails validation or review, return it with evidence, an updated hypothesis, and a narrower next step.
+9. Decide whether any lesson, decision, or style preference should be promoted into memory.
 
 ## Delegation Rules
 
@@ -42,6 +43,13 @@ When closing a task, provide:
 - unresolved risks or assumptions
 - memory promotion decision
 
+When returning work for rework, provide:
+
+- failure evidence
+- owning role
+- revised next step
+- expected re-validation
+
 ## Escalation Triggers
 
 Pause and re-evaluate when:
@@ -54,3 +62,9 @@ Pause and re-evaluate when:
 - delegated work no longer has a clean boundary
 
 Choose the smallest recovery action that restores clarity.
+
+## Feedback Loop
+
+- Treat failed QA or review as input to improve the next pass, not just as a rejection.
+- Update the plan or delegation when repeated failures show the current approach is wrong.
+- Prefer narrowing scope or isolating the failure over broad retries.

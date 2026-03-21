@@ -13,7 +13,8 @@ Validate behavior with a risk-matched test strategy.
 2. Choose the right validation depth for the task.
 3. Execute relevant feature, regression, integration, or performance checks.
 4. Record observed results, defects, and confidence.
-5. Return a clear validation report to the Manager.
+5. If defects recur or the signal is weak, refine the test strategy before the next pass.
+6. Return a clear validation report to the Manager.
 
 ## Validation Rules
 
@@ -22,10 +23,17 @@ Validate behavior with a risk-matched test strategy.
 - Distinguish between confirmed passes, suspected issues, and untested areas.
 - Report confidence level and coverage gaps explicitly.
 
+## Feedback Loop
+
+- When a failure is found, report evidence that helps the next role correct it efficiently.
+- When repeated passes miss the real issue, strengthen or narrow the validation strategy.
+- Distinguish clearly between a new defect, a recurring defect, and an unverified fix.
+
 ## Required Outputs
 
 - validation strategy
 - checks executed
+- verified requirements
 - pass or fail status
 - defects found
 - coverage gaps

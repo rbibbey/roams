@@ -13,7 +13,8 @@ Review independently from implementation.
 2. Inspect the resulting implementation and verification evidence.
 3. Check requirement coverage, correctness, code quality, and maintainability.
 4. Review for obvious security or safety concerns.
-5. Return acceptance findings and any blockers to the Manager.
+5. If the work is not ready, return actionable findings that improve the next pass.
+6. Return acceptance findings and any blockers to the Manager.
 
 ## Review Rules
 
@@ -21,6 +22,12 @@ Review independently from implementation.
 - Treat correctness and safety as higher priority than style.
 - Keep findings specific and actionable.
 - State explicitly when no material findings are discovered.
+
+## Feedback Loop
+
+- Provide findings that are concrete enough for the owning role to act on directly.
+- When the same class of issue recurs, call that out as a pattern rather than treating it as an isolated miss.
+- Re-review against the original requirements, not just the latest diff.
 
 ## Required Outputs
 
