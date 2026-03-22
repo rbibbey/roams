@@ -183,6 +183,18 @@ Recovery options:
 - switch to diagnosis mode
 - request a human checkpoint when risk is non-obvious
 
+### Failure Classes
+
+Classify meaningful failures into one of these categories:
+
+- `requirements_failure`: the task intent, scope, or acceptance criteria were misunderstood
+- `implementation_failure`: the code or output does not behave as intended
+- `validation_failure`: tests or checks were insufficient, incorrect, or failed to prove the result
+- `design_failure`: the design direction or interaction model does not satisfy the intended experience
+- `wrong_assumption_failure`: work depended on an external or internal assumption that turned out to be false
+
+Use the narrowest class that explains the failure.
+
 ## Feedback And Relearning Rules
 
 Every role should improve from failed checks during the task, not just at the end.
@@ -193,6 +205,43 @@ Every role should improve from failed checks during the task, not just at the en
 - When failures suggest a wrong external assumption, the Manager should trigger targeted research before another implementation pass.
 - When repeated failures occur, the Manager should narrow scope, update the plan, or switch the task into diagnosis mode.
 - Only promote a lesson into long-term memory when the failure pattern is durable enough to matter again.
+
+### Diagnosis Mode
+
+Switch to diagnosis mode when:
+
+- the same class of failure repeats
+- the next fix is still low-confidence after a failed pass
+- the root cause is unclear
+- retries are expanding scope instead of narrowing it
+
+In diagnosis mode:
+
+- stop broad implementation
+- classify the failure
+- record the most likely root cause
+- isolate the smallest failing slice
+- decide whether research must re-trigger
+- define one narrower next step before resuming execution
+
+### Rework Handoff
+
+When routing work back after a failed pass, provide:
+
+- failure class
+- root-cause hypothesis
+- evidence
+- owning role
+- narrower next step
+- expected re-validation
+
+### Root-Cause Rules
+
+Root-cause notes should:
+
+- describe the likely underlying reason, not just the visible symptom
+- stay short and evidence-based
+- be revised if new evidence proves them wrong
 
 ## Research Rules
 
@@ -357,6 +406,45 @@ Use a real subagent only when:
 - outputs can be reviewed independently
 
 Do not use subagents for tiny, tightly coupled, or immediately blocking work.
+
+### Delegation Contract
+
+When delegating to a subagent, always define:
+
+- goal
+- ownership boundary
+- expected deliverable
+- validation expectations
+- handback format
+
+The ownership boundary should name the files, module, or responsibility area the subagent owns.
+
+### Ownership Rules
+
+- Use subagents only for bounded work with a clear write or analysis boundary.
+- Do not assign the same unresolved write scope to multiple subagents.
+- Do not delegate work whose result is immediately blocking the next local step unless parallelism still adds clear value.
+- Keep the Manager as the orchestrator and acceptance owner.
+
+### Allowed Subagent Cases
+
+- parallel work on clearly separated modules
+- independent design exploration while implementation proceeds elsewhere
+- independent validation or review that can run without blocking the next local step
+- bounded research or diagnosis tasks with self-contained outputs
+
+### Disallowed Subagent Cases
+
+- trivial tasks
+- tightly coupled edits to the same unresolved area
+- duplicated exploration of the same unresolved problem
+- delegation used only to avoid making a decision locally
+
+### Merge And Review Rules
+
+- Subagent outputs must be reviewed before acceptance.
+- The Manager should integrate or reconcile parallel outputs rather than assuming they fit together automatically.
+- If parallel outputs conflict, pause and re-establish ownership before continuing.
 
 ## Definition of Done
 

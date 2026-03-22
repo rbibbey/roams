@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnosis Ops"
+  short_description: "Classifies failures and narrows rework"
+  default_prompt: "Use $diagnosis-ops to classify a failed pass, record a root-cause hypothesis, decide whether research should re-trigger, and produce a narrow rework handoff."

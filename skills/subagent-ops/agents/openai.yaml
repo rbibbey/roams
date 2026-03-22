@@ -1,0 +1,4 @@
+interface:
+  display_name: "Subagent Ops"
+  short_description: "Delegates bounded parallel work safely"
+  default_prompt: "Use $subagent-ops to decide whether to stay in role-mode or delegate to a real subagent, define a clear delegation contract, and reconcile parallel outputs before acceptance."

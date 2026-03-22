@@ -43,7 +43,9 @@ The system is also feedback-driven:
 - [docs/status.md](C:\git\codex-roams\docs\status.md): current repository purpose, stage, goals, and open questions
 - [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md): long-horizon feature sequencing and phase definitions
 - [skills/manager/SKILL.md](C:\git\codex-roams\skills\manager\SKILL.md): orchestration skill
+- [skills/diagnosis-ops/SKILL.md](C:\git\codex-roams\skills\diagnosis-ops\SKILL.md): shared failure classification and rework guidance
 - [skills/memory-ops/SKILL.md](C:\git\codex-roams\skills\memory-ops\SKILL.md): staged memory promotion and pruning guidance
+- [skills/subagent-ops/SKILL.md](C:\git\codex-roams\skills\subagent-ops\SKILL.md): bounded subagent delegation and merge guidance
 - [skills/research/SKILL.md](C:\git\codex-roams\skills\research\SKILL.md): Manager-owned research capability
 - [skills/ui-designer/SKILL.md](C:\git\codex-roams\skills\ui-designer\SKILL.md): design skill
 - [skills/coder/SKILL.md](C:\git\codex-roams\skills\coder\SKILL.md): implementation skill

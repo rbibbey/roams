@@ -33,6 +33,7 @@ Implement the smallest viable slice first.
 - Use failed QA or review findings to refine the implementation, not just patch symptoms.
 - Prefer the smallest change that addresses the verified issue.
 - Re-run the checks that should prove the fix before handing work back.
+- Distinguish implementation failures from wrong-assumption failures before changing the code.
 
 ## Required Outputs
 

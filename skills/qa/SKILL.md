@@ -28,6 +28,7 @@ Validate behavior with a risk-matched test strategy.
 - When a failure is found, report evidence that helps the next role correct it efficiently.
 - When repeated passes miss the real issue, strengthen or narrow the validation strategy.
 - Distinguish clearly between a new defect, a recurring defect, and an unverified fix.
+- Flag validation failures separately from implementation failures when the issue is really insufficient or incorrect checking.
 
 ## Required Outputs
 

@@ -28,6 +28,7 @@ Review independently from implementation.
 - Provide findings that are concrete enough for the owning role to act on directly.
 - When the same class of issue recurs, call that out as a pattern rather than treating it as an isolated miss.
 - Re-review against the original requirements, not just the latest diff.
+- Distinguish requirement gaps from implementation defects when sending work back.
 
 ## Required Outputs
 

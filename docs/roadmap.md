@@ -25,9 +25,11 @@ Current roadmap state:
 - completed: v1 foundation
 - completed: Manager-owned research capability
 - completed: Phase 2 - Memory Operations
-- next active phase: Phase 3 - Rework And Diagnosis Taxonomy
+- completed: Phase 3 - Rework And Diagnosis Taxonomy
+- completed: Phase 4 - Subagent Orchestration Rules
+- next active phase: Phase 5 - Bootstrap Automation
 
-Phase 3 should begin before subagent expansion or broader automation work.
+Phase 5 should begin before deeper evaluation-harness expansion.
 
 ## Planned Phases
 

@@ -8,7 +8,7 @@ Keep plans short and current. Replace stale detail with the latest verified stat
 
 ### Task
 
-Finalize Phase 2 memory operations by adding a canonical candidate-memory artifact, explicit update triggers and review flow, and a verification scenario that exercises discard, stage, and promote decisions.
+Implement Phase 4 subagent orchestration rules: add a delegation contract, parallel ownership rules, handoff and merge expectations, Manager guidance for role-mode versus subagent execution, and a bounded parallel-delegation verification scenario.
 
 ### Status
 
@@ -18,47 +18,46 @@ Finalize Phase 2 memory operations by adding a canonical candidate-memory artifa
 
 ### Success Criteria
 
-- memory updates are explicitly staged before promotion.
-- candidate memory has a canonical home and review workflow.
-- `AGENTS.md` defines memory promotion, pruning, stale-memory detection, and bucket-selection rules.
-- a dedicated memory-ops guidance module or skill exists.
-- the verification suite includes a memory promotion test that exercises discard, stage, and promote decisions.
-- long-term memory remains selective and resistant to noise.
+- `AGENTS.md` defines a delegation contract, ownership rules, allowed and disallowed subagent cases, and merge/review expectations.
+- Manager guidance distinguishes role-mode execution from true subagent use.
+- a dedicated subagent-orchestration guidance module or skill exists.
+- the verification suite includes a bounded parallel-delegation scenario.
+- subagent guidance keeps Manager as orchestration authority and avoids duplicate/conflicting work.
 - verification evidence is recorded.
 - review reaches a clear acceptance decision.
 
 ### Risks
 
-- memory rules could become too heavy for routine use.
-- staged memory guidance must clarify where temporary notes live without turning memory into a dumping ground.
+- subagent rules could become too permissive and encourage over-delegation.
+- the delegation contract must stay small enough to use routinely.
 
 ### Steps
 
-1. Add a canonical `memory/candidates.md` artifact with review and promotion workflow.
-2. Extend `AGENTS.md` and `memory-ops` guidance with candidate staging location, update triggers, and review flow.
-3. Update the verification scenario so it exercises discard, stage, and promote decisions.
-4. Register any memory-documentation updates in the high-level docs and roadmap/status state.
-5. Run checks on the candidate-memory artifact, memory rules, and verification coverage.
-6. Close the task with validation and review evidence.
+1. Extend `AGENTS.md` with a delegation contract, ownership rules, allowed/disallowed subagent cases, and merge/review expectations.
+2. Update Manager guidance to decide when to stay in role-mode versus when to spawn a subagent.
+3. Add a subagent-orchestration guidance skill.
+4. Add a verification scenario that exercises bounded parallel delegation.
+5. Update roadmap/status state to mark Phase 4 in progress.
+6. Run checks on the orchestration rules, skill, and verification coverage, then close the task.
 
 ### Validation
 
-- commands run: `Test-Path memory/candidates.md`, `Test-Path skills/memory-ops/SKILL.md`, `Select-String` for candidate-memory and update-trigger sections in `AGENTS.md`, `Get-Content` review of `examples/verification/memory-promotion-test.md`, `git diff` on memory-operations files
+- commands run: `Test-Path skills/subagent-ops/SKILL.md`, `Select-String` for delegation and subagent sections in `AGENTS.md`, `Get-Content` review of `examples/verification/subagent-orchestration-test.md`, `git diff` on orchestration files
 - tests executed: none
-- manual checks: reviewed the memory-promotion scenario against the completed Phase 2 model and confirmed the rules support discard, stage, and promote decisions with explicit bucket guidance and a canonical candidate-memory staging location
+- manual checks: reviewed the bounded parallel-delegation scenario and confirmed the framework yields role-mode versus subagent guidance, non-overlapping ownership boundaries, a concrete handback format, and Manager-owned final reconciliation
 - review status: accepted
 
 ### Handoffs
 
 - from: Manager
 - to: Coder, QA, Reviewer
-- deliverable: updated memory rules, memory-ops skill, memory verification test, validation evidence, acceptance decision
+- deliverable: delegation contract, subagent guidance, orchestration verification test, validation evidence, acceptance decision
 - open questions: none
 
 ### Notes
 
-This task should complete the operational memory workflow without adding noisy long-term memory entries.
-Memory test result: item 1 discard, item 2 promote to `lessons`, item 3 promote to `decisions`, item 4 discard, item 5 stage in `memory/candidates.md` targeting `style` or `lessons` pending more evidence.
+This task should enable bounded parallelism without encouraging subagent use for tightly coupled or trivial work.
+Subagent test result: delegation is allowed for separated documentation scopes, each worker owns one bounded artifact, and the Manager must review and reconcile the outputs before closure.
 
 ## Plan Template
 

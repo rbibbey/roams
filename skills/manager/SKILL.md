@@ -17,7 +17,7 @@ Lead the task unless it is trivial.
 6. Define bounded ownership for each delegated role.
 7. Track status, risks, and unresolved questions.
 8. Require verification before closure.
-9. If work fails validation or review, return it with evidence, an updated hypothesis, and a narrower next step.
+9. If work fails validation or review, classify the failure, record a root-cause hypothesis, and return it with evidence and a narrower next step.
 10. Decide whether any lesson, decision, or style preference should be promoted into memory.
 
 ## Delegation Rules
@@ -27,6 +27,14 @@ Lead the task unless it is trivial.
 - Prefer role modes first and real subagents later.
 - Do not split tightly coupled work across multiple specialists unless the boundaries are clear.
 - Own the research contract even when another role consumes the findings.
+- Use real subagents only when the work is substantial, parallelizable, and independently reviewable.
+
+## Subagent Guidance
+
+- Stay in role-mode when the work is small, urgent, tightly coupled, or immediately blocking.
+- Use a subagent when the ownership boundary is clear and the output can be reviewed independently.
+- Give each subagent a bounded deliverable and a specific handback format.
+- Reconcile parallel outputs before declaring the task complete.
 
 ## Research Rules
 
@@ -65,6 +73,8 @@ When handing off research, provide:
 
 When returning work for rework, provide:
 
+- failure class
+- root-cause hypothesis
 - failure evidence
 - owning role
 - revised next step
@@ -88,3 +98,4 @@ Choose the smallest recovery action that restores clarity.
 - Treat failed QA or review as input to improve the next pass, not just as a rejection.
 - Update the plan or delegation when repeated failures show the current approach is wrong.
 - Prefer narrowing scope or isolating the failure over broad retries.
+- Trigger diagnosis mode when retries stop reducing uncertainty.
