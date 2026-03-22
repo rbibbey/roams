@@ -47,6 +47,7 @@ The system is also feedback-driven:
 - [skills/memory-ops/SKILL.md](C:\git\codex-roams\skills\memory-ops\SKILL.md): staged memory promotion and pruning guidance
 - [skills/subagent-ops/SKILL.md](C:\git\codex-roams\skills\subagent-ops\SKILL.md): bounded subagent delegation and merge guidance
 - [skills/research/SKILL.md](C:\git\codex-roams\skills\research\SKILL.md): Manager-owned research capability
+- [skills/bootstrap/SKILL.md](C:\git\codex-roams\skills\bootstrap\SKILL.md): lightweight new-project setup workflow
 - [skills/ui-designer/SKILL.md](C:\git\codex-roams\skills\ui-designer\SKILL.md): design skill
 - [skills/coder/SKILL.md](C:\git\codex-roams\skills\coder\SKILL.md): implementation skill
 - [skills/qa/SKILL.md](C:\git\codex-roams\skills\qa\SKILL.md): validation skill
@@ -60,13 +61,65 @@ Use this sequence when starting a new project from this template:
 
 1. Copy the template into the new project repository.
 2. Update [AGENTS.md](C:\git\codex-roams\AGENTS.md) with project-specific constraints, conventions, and definitions of done.
-3. Add or revise entries in [memory/style.md](C:\git\codex-roams\memory\style.md) to reflect how you want work performed.
-4. Use [memory/candidates.md](C:\git\codex-roams\memory\candidates.md) to stage potentially durable memory before promotion.
-5. Record any initial architecture choices in [memory/decisions.md](C:\git\codex-roams\memory\decisions.md).
-6. Establish [docs/status.md](C:\git\codex-roams\docs\status.md) as the current project snapshot and [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md) as the long-horizon feature roadmap.
-7. Expand the role skills only when the project needs more specialized behavior.
-8. For non-trivial work, instantiate the template in [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) and let the Manager lead the lifecycle.
-9. After meaningful work, stage or promote only durable signal into the memory files.
+3. Seed [memory/style.md](C:\git\codex-roams\memory\style.md) with stable preferences for how work should be done.
+4. Leave [memory/decisions.md](C:\git\codex-roams\memory\decisions.md) and [memory/lessons.md](C:\git\codex-roams\memory\lessons.md) sparse until real project-level choices or repeated lessons exist.
+5. Use [memory/candidates.md](C:\git\codex-roams\memory\candidates.md) to stage setup observations that might become durable later.
+6. Rewrite [docs/status.md](C:\git\codex-roams\docs\status.md) to reflect the new repo's purpose, current stage, near-term goals, and open questions.
+7. Rewrite [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md) so phases reflect the new project's actual sequencing rather than this template's internal roadmap.
+8. Reset [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) to the current active task only when non-trivial work begins.
+9. Expand the role skills only when the project needs more specialized behavior.
+10. After meaningful work, stage or promote only durable signal into the memory files.
+
+## Standardized Bootstrap Workflow
+
+Use ROAMS on itself when bootstrapping a fresh repo:
+
+1. Manager classifies bootstrap as a standard task and opens `.agent/PLANS.md`.
+2. Manager gathers only repo-specific context: purpose, constraints, initial architecture direction, and preferred workflow style.
+3. Manager updates `AGENTS.md`, `docs/status.md`, `docs/roadmap.md`, and `memory/style.md` first.
+4. Manager records only real initial decisions in `memory/decisions.md`; unknowns stay as open questions or candidate memory.
+5. Manager keeps `.agent/PLANS.md` task-local and does not turn it into a backlog.
+6. Manager verifies that roadmap, status, and active plan remain clearly separated before closing bootstrap.
+
+## Bootstrap Checklist
+
+- template copied into the target repository
+- `AGENTS.md` rewritten for project-specific constraints
+- `docs/status.md` rewritten for the new project snapshot
+- `docs/roadmap.md` rewritten for the new project's phase sequence
+- `memory/style.md` seeded with stable working preferences
+- `memory/decisions.md` updated only if real project decisions already exist
+- `memory/candidates.md` used for uncertain but potentially durable setup observations
+- `.agent/PLANS.md` reset to the current bootstrap or first implementation task
+- unnecessary roles, skills, or automation not added preemptively
+
+## Optional Bootstrap Automation Prompt
+
+Use this prompt when you want Codex to apply ROAMS to a new repository with the smallest practical setup:
+
+```text
+Bootstrap this repository from the ROAMS template using the framework on itself.
+
+Goal:
+- initialize the repo for its real purpose without over-provisioning process
+
+Required outcomes:
+- update AGENTS.md with project-specific constraints and definitions of done
+- seed memory/style.md with stable workflow preferences
+- keep memory/decisions.md and memory/lessons.md minimal unless real durable signal already exists
+- rewrite docs/status.md for the current project snapshot
+- rewrite docs/roadmap.md for the project's real phases and sequencing
+- reset .agent/PLANS.md to the active bootstrap task
+- verify clean separation between roadmap, status, and active-plan artifacts
+
+Guardrails:
+- prefer minimal, reviewable changes
+- do not invent extra roles unless repeated work justifies them
+- stage uncertain setup observations in memory/candidates.md instead of promoting them
+- close with verification evidence and any remaining assumptions
+```
+
+For a reusable workflow, use [skills/bootstrap/SKILL.md](C:\git\codex-roams\skills\bootstrap\SKILL.md).
 
 ## Document Model
 

@@ -8,7 +8,7 @@ Keep plans short and current. Replace stale detail with the latest verified stat
 
 ### Task
 
-Implement Phase 4 subagent orchestration rules: add a delegation contract, parallel ownership rules, handoff and merge expectations, Manager guidance for role-mode versus subagent execution, and a bounded parallel-delegation verification scenario.
+Implement Phase 5 bootstrap automation: define a standardized new-project bootstrap workflow, add reusable bootstrap guidance, and verify that a fresh repo can be initialized from this template with minimal manual setup.
 
 ### Status
 
@@ -18,46 +18,47 @@ Implement Phase 4 subagent orchestration rules: add a delegation contract, paral
 
 ### Success Criteria
 
-- `AGENTS.md` defines a delegation contract, ownership rules, allowed and disallowed subagent cases, and merge/review expectations.
-- Manager guidance distinguishes role-mode execution from true subagent use.
-- a dedicated subagent-orchestration guidance module or skill exists.
-- the verification suite includes a bounded parallel-delegation scenario.
-- subagent guidance keeps Manager as orchestration authority and avoids duplicate/conflicting work.
+- `README.md` defines a lightweight bootstrap workflow for initializing a new ROAMS-enabled repository.
+- bootstrap guidance includes template-copy and setup checklist, memory seeding guidance, and roadmap/status initialization guidance.
+- a dedicated bootstrap skill or reusable setup procedure exists.
+- the verification suite includes a fresh-repo bootstrap scenario.
+- bootstrap guidance keeps setup minimal and preserves clean separation between roadmap, status, and active-plan artifacts.
 - verification evidence is recorded.
 - review reaches a clear acceptance decision.
 
 ### Risks
 
-- subagent rules could become too permissive and encourage over-delegation.
-- the delegation contract must stay small enough to use routinely.
+- bootstrap guidance could become too heavy and over-provision process for new repositories.
+- automation guidance must stay useful even when users are bootstrapping manually rather than through a product-specific automation feature.
 
 ### Steps
 
-1. Extend `AGENTS.md` with a delegation contract, ownership rules, allowed/disallowed subagent cases, and merge/review expectations.
-2. Update Manager guidance to decide when to stay in role-mode versus when to spawn a subagent.
-3. Add a subagent-orchestration guidance skill.
-4. Add a verification scenario that exercises bounded parallel delegation.
-5. Update roadmap/status state to mark Phase 4 in progress.
-6. Run checks on the orchestration rules, skill, and verification coverage, then close the task.
+1. Refresh the active plan for the Phase 5 bootstrap task.
+2. Extend `README.md` with a standardized bootstrap workflow and optional automation prompt.
+3. Add a bootstrap guidance skill or reusable setup procedure.
+4. Add a verification scenario for starting a fresh repo from the template.
+5. Update roadmap/status state to reflect Phase 5 progress and completion.
+6. Run checks on the bootstrap guidance, skill, verification coverage, and resulting repo state.
 
 ### Validation
 
-- commands run: `Test-Path skills/subagent-ops/SKILL.md`, `Select-String` for delegation and subagent sections in `AGENTS.md`, `Get-Content` review of `examples/verification/subagent-orchestration-test.md`, `git diff` on orchestration files
+- commands run: `Test-Path skills/bootstrap/SKILL.md`, `Test-Path skills/bootstrap/agents/openai.yaml`, `Test-Path examples/verification/bootstrap-automation-test.md`, `Select-String` checks in `README.md`, `docs/roadmap.md`, and `docs/status.md`, `git diff` on bootstrap files
 - tests executed: none
-- manual checks: reviewed the bounded parallel-delegation scenario and confirmed the framework yields role-mode versus subagent guidance, non-overlapping ownership boundaries, a concrete handback format, and Manager-owned final reconciliation
+- manual checks: reviewed the new bootstrap workflow, skill, and verification scenario and confirmed they keep setup minimal, preserve separation between roadmap, status, and active-plan artifacts, and provide both a manual checklist and reusable bootstrap prompt
 - review status: accepted
 
 ### Handoffs
 
 - from: Manager
 - to: Coder, QA, Reviewer
-- deliverable: delegation contract, subagent guidance, orchestration verification test, validation evidence, acceptance decision
+- deliverable: bootstrap workflow guidance, reusable bootstrap skill, verification test, validation evidence, acceptance decision
 - open questions: none
 
 ### Notes
 
-This task should enable bounded parallelism without encouraging subagent use for tightly coupled or trivial work.
-Subagent test result: delegation is allowed for separated documentation scopes, each worker owns one bounded artifact, and the Manager must review and reconcile the outputs before closure.
+This task should make setup repeatable without creating an overbuilt automation subsystem.
+The bootstrap flow should work both as a manual checklist and as a reusable prompt that applies ROAMS to a fresh repository.
+Phase 5 result: bootstrap guidance now lives in `README.md`, reusable procedure guidance lives in `skills/bootstrap/SKILL.md`, and fresh-repo validation lives in `examples/verification/bootstrap-automation-test.md`.
 
 ## Plan Template
 

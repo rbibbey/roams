@@ -18,6 +18,7 @@ The suite is designed to answer two questions:
 - [memory-promotion-test.md](C:\git\codex-roams\examples\verification\memory-promotion-test.md): validates staged memory promotion and bucket selection
 - [diagnosis-rework-test.md](C:\git\codex-roams\examples\verification\diagnosis-rework-test.md): validates failure classification and narrower rework
 - [subagent-orchestration-test.md](C:\git\codex-roams\examples\verification\subagent-orchestration-test.md): validates bounded parallel delegation and merge rules
+- [bootstrap-automation-test.md](C:\git\codex-roams\examples\verification\bootstrap-automation-test.md): validates fresh-repo bootstrap and lightweight setup behavior
 - [roadmap-governance-test.md](C:\git\codex-roams\examples\verification\roadmap-governance-test.md): validates roadmap, status, and active-plan separation
 - [standard-workflow-test.md](C:\git\codex-roams\examples\verification\standard-workflow-test.md): validates the full Manager -> specialist -> validation -> review -> closure flow
 

@@ -27,9 +27,10 @@ Current roadmap state:
 - completed: Phase 2 - Memory Operations
 - completed: Phase 3 - Rework And Diagnosis Taxonomy
 - completed: Phase 4 - Subagent Orchestration Rules
-- next active phase: Phase 5 - Bootstrap Automation
+- completed: Phase 5 - Bootstrap Automation
+- next active phase: Phase 6 - Evaluation Harness Expansion
 
-Phase 5 should begin before deeper evaluation-harness expansion.
+Phase 6 can now build on the standardized bootstrap flow and verification coverage added in Phase 5.
 
 ## Planned Phases
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bootstrap"
+  short_description: "Initializes a repo from the ROAMS template"
+  default_prompt: "Use $bootstrap to apply the ROAMS template to a fresh repository, keep the setup minimal, seed only the necessary docs and memory, and verify clean separation between roadmap, status, and active-plan artifacts."
