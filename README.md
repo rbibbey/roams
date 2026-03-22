@@ -67,7 +67,7 @@ Use this sequence when starting a new project from this template:
 6. Rewrite [docs/status.md](C:\git\codex-roams\docs\status.md) to reflect the new repo's purpose, current stage, near-term goals, and open questions.
 7. Rewrite [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md) so phases reflect the new project's actual sequencing rather than this template's internal roadmap.
 8. Reset [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) to the current active task only when non-trivial work begins.
-9. Expand the role skills only when the project needs more specialized behavior.
+9. Prefer project-local skills when a repository has specialist behavior that should extend a base role rather than overwrite it.
 10. After meaningful work, stage or promote only durable signal into the memory files.
 
 ## Standardized Bootstrap Workflow
@@ -79,7 +79,8 @@ Use ROAMS on itself when bootstrapping a fresh repo:
 3. Manager updates `AGENTS.md`, `docs/status.md`, `docs/roadmap.md`, and `memory/style.md` first.
 4. Manager records only real initial decisions in `memory/decisions.md`; unknowns stay as open questions or candidate memory.
 5. Manager keeps `.agent/PLANS.md` task-local and does not turn it into a backlog.
-6. Manager verifies that roadmap, status, and active plan remain clearly separated before closing bootstrap.
+6. Manager checks whether the repo has project-local skills that should extend base roles such as `UI Designer`.
+7. Manager verifies that roadmap, status, and active plan remain clearly separated before closing bootstrap.
 
 ## Bootstrap Checklist
 
@@ -91,6 +92,7 @@ Use ROAMS on itself when bootstrapping a fresh repo:
 - `memory/decisions.md` updated only if real project decisions already exist
 - `memory/candidates.md` used for uncertain but potentially durable setup observations
 - `.agent/PLANS.md` reset to the current bootstrap or first implementation task
+- project-local skills linked to the base roles they extend when they are the repo's source of truth
 - unnecessary roles, skills, or automation not added preemptively
 
 ## Optional Bootstrap Automation Prompt

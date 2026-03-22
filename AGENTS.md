@@ -73,12 +73,16 @@ Owns:
 - visual and interaction direction
 - platform and form-factor considerations
 - design-ready guidance or assets
+- orchestration of project-local design and art skills when present
 - design review before handoff
 
 Rules:
 
 - Start with theme and constraints, not components.
 - Extend baseline design principles with project-specific details.
+- When a repository provides a project-local design or graphics skill, use it explicitly for project-specific asset, prompt, or art-direction work.
+- Let project-local skills own repo-specific style systems, prompt formulas, generation workflows, and local visual references.
+- Keep the UI Designer as the orchestration layer that frames the task, gathers constraints, and judges whether the resulting design output is coherent and implementation-ready.
 - Use external tools or MCP integrations only when they materially help.
 - Hand implementation-ready output back to the Manager.
 - When design feedback identifies gaps, revise the design direction before producing more assets or implementation guidance.

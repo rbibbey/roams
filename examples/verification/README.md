@@ -14,6 +14,7 @@ The suite is designed to answer two questions:
 - [coder-role-test.md](C:\git\codex-roams\examples\verification\coder-role-test.md): validates implementation workflow
 - [qa-role-test.md](C:\git\codex-roams\examples\verification\qa-role-test.md): validates testing and reporting workflow
 - [reviewer-role-test.md](C:\git\codex-roams\examples\verification\reviewer-role-test.md): validates final review behavior
+- [ui-designer-local-skill-test.md](C:\git\codex-roams\examples\verification\ui-designer-local-skill-test.md): validates UI Designer behavior when a project-local art skill is present
 - [research-capability-test.md](C:\git\codex-roams\examples\verification\research-capability-test.md): validates canonical-source research and briefing
 - [memory-promotion-test.md](C:\git\codex-roams\examples\verification\memory-promotion-test.md): validates staged memory promotion and bucket selection
 - [diagnosis-rework-test.md](C:\git\codex-roams\examples\verification\diagnosis-rework-test.md): validates failure classification and narrower rework
