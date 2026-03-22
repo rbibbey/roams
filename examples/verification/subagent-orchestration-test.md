@@ -23,9 +23,11 @@ Assume:
 - whether subagent use is justified
 - ownership boundary for each delegated worker
 - expected deliverables
+- completion criteria
 - validation expectations
 - handback format
 - how final reconciliation happens
+- whether the handback is detailed enough for the Manager to decide on escalation without asking the user by default
 
 ## Expected Output
 
@@ -35,6 +37,8 @@ The test should return:
 - delegation contracts, if subagents are used
 - merge or review plan
 - reason subagent use is allowed or disallowed
+- how child-agent handbacks return to the Manager without user intervention
+- required handback fields that let the Manager decide whether to close, rework, or escalate
 
 ## Pass Criteria
 
@@ -42,6 +46,8 @@ The test should return:
 - ownership boundaries do not overlap
 - the Manager remains the acceptance owner
 - parallel outputs require review before closure
+- child agents report back to the delegating agent rather than waiting on direct user feedback
+- handbacks include decision-ready detail rather than pushing ambiguity to the user
 
 ## Common Failure Signals
 
@@ -49,3 +55,4 @@ The test should return:
 - overlapping ownership boundaries
 - no handback or merge plan
 - treating parallel outputs as automatically compatible
+- child threads left awaiting user feedback when the Manager could consume the result

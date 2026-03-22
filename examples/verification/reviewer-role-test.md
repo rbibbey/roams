@@ -18,7 +18,7 @@ Assume the following implementation summary:
 - check for missing requirements
 - check for unnecessary complexity
 - assess obvious quality or maintainability issues
-- return acceptance findings
+- return a terminal handback to the Manager
 
 ## Expected Output
 
@@ -28,6 +28,9 @@ The Reviewer should return:
 - findings ordered by severity, if any
 - residual risks
 - review confidence
+- recommended Manager action: close, route rework, or escalate
+- escalation reason, only if escalation is recommended
+- if the work is not ready, a rework handoff with failure class, evidence, owning role, narrower next step, and expected re-validation
 
 ## Pass Criteria
 
@@ -35,6 +38,9 @@ The Reviewer should return:
 - findings are specific and actionable
 - the Reviewer explicitly states when no material findings exist
 - style-only feedback does not overshadow correctness
+- the Reviewer ends in `accepted` or `rework required`
+- the Reviewer does not ask the user for feedback when the Manager can proceed
+- the Reviewer gives the Manager enough detail to decide whether escalation is actually necessary
 
 ## Common Failure Signals
 
@@ -42,3 +48,4 @@ The Reviewer should return:
 - focusing on style before correctness
 - no explicit acceptance decision
 - restating the implementation without reviewing it
+- asking the user to decide the next step instead of handing back to the Manager

@@ -63,6 +63,9 @@ Rules:
 - Delegate only when ownership is clear.
 - Invoke research when external documentation, standards, or product behavior must be verified.
 - Do not close a task until implementation and validation are complete.
+- Consume delegated outputs directly and decide whether to close the task, route rework, or escalate.
+- Keep user involvement out of specialist handbacks unless contradictory requirements, meaningful security or safety risk, or a non-obvious architecture tradeoff requires a human decision.
+- Require specialist handbacks to be detailed enough for the Manager to decide whether user involvement is necessary without re-investigating the work.
 - When a delegated role fails validation or review, route the work back with explicit evidence and a revised next step.
 
 ### UI Designer
@@ -137,6 +140,8 @@ Rules:
 - Validate that the solution matches the plan.
 - Flag correctness or readiness gaps before closure.
 - Treat review as independent from implementation.
+- End every review in one of two states only: `accepted` or `rework required`.
+- Return findings to the Manager as a terminal handback, not as a request for user feedback.
 - When returning work, provide actionable findings that improve the next implementation or validation pass.
 
 ## Task Lifecycle
@@ -238,6 +243,8 @@ When routing work back after a failed pass, provide:
 - owning role
 - narrower next step
 - expected re-validation
+- recommended Manager action: close | route rework | escalate
+- escalation reason, if escalation is recommended
 
 ### Root-Cause Rules
 
@@ -418,6 +425,7 @@ When delegating to a subagent, always define:
 - goal
 - ownership boundary
 - expected deliverable
+- completion criteria
 - validation expectations
 - handback format
 
@@ -429,6 +437,9 @@ The ownership boundary should name the files, module, or responsibility area the
 - Do not assign the same unresolved write scope to multiple subagents.
 - Do not delegate work whose result is immediately blocking the next local step unless parallelism still adds clear value.
 - Keep the Manager as the orchestrator and acceptance owner.
+- Child agents report to the delegating agent only and should not wait on direct user feedback.
+- Every delegated task must define what finished looks like and the exact artifact the child agent returns.
+- Every handback must include enough evidence, risk context, and a recommended next action for the Manager to decide whether the user needs to be involved.
 
 ### Allowed Subagent Cases
 
@@ -449,6 +460,7 @@ The ownership boundary should name the files, module, or responsibility area the
 - Subagent outputs must be reviewed before acceptance.
 - The Manager should integrate or reconcile parallel outputs rather than assuming they fit together automatically.
 - If parallel outputs conflict, pause and re-establish ownership before continuing.
+- If the runtime leaves a child thread in a waiting state after handback, the Manager should consume and close that thread as part of orchestration.
 
 ## Definition of Done
 

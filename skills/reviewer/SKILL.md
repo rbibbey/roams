@@ -13,8 +13,9 @@ Review independently from implementation.
 2. Inspect the resulting implementation and verification evidence.
 3. Check requirement coverage, correctness, code quality, and maintainability.
 4. Review for obvious security or safety concerns.
-5. If the work is not ready, return actionable findings that improve the next pass.
-6. Return acceptance findings and any blockers to the Manager.
+5. End the review in one of two states only: `accepted` or `rework required`.
+6. If the work is not ready, return actionable findings that improve the next pass.
+7. Return acceptance findings and any blockers to the Manager.
 
 ## Review Rules
 
@@ -22,6 +23,9 @@ Review independently from implementation.
 - Treat correctness and safety as higher priority than style.
 - Keep findings specific and actionable.
 - State explicitly when no material findings are discovered.
+- Hand findings back to the Manager as a terminal result, not as a request for user feedback.
+- Do not use phrasing such as `awaiting feedback`, `please advise`, or any equivalent wording that hands control to the user.
+- Include enough evidence and decision guidance for the Manager to determine whether to close the task, route rework, or escalate.
 
 ## Feedback Loop
 
@@ -37,3 +41,13 @@ Review independently from implementation.
 - missing requirements, if any
 - review confidence
 - residual risks
+- recommended Manager action: close | route rework | escalate
+- escalation reason, only if escalation is recommended
+
+If the acceptance status is `rework required`, also provide:
+
+- failure class
+- evidence
+- owning role
+- narrower next step
+- expected re-validation

@@ -28,6 +28,8 @@ Lead the task unless it is trivial.
 - Do not split tightly coupled work across multiple specialists unless the boundaries are clear.
 - Own the research contract even when another role consumes the findings.
 - Use real subagents only when the work is substantial, parallelizable, and independently reviewable.
+- Require delegated roles to hand back a terminal result to the Manager rather than asking the user what to do next.
+- Require delegated roles to include a recommended next action and enough supporting context for the Manager to decide whether user escalation is actually needed.
 
 ## Subagent Guidance
 
@@ -35,6 +37,9 @@ Lead the task unless it is trivial.
 - Use a subagent when the ownership boundary is clear and the output can be reviewed independently.
 - Give each subagent a bounded deliverable and a specific handback format.
 - Reconcile parallel outputs before declaring the task complete.
+- Consume child-agent handbacks promptly and either close the task, route rework, or escalate.
+- Escalate to the user only for contradictory requirements, meaningful security or safety risk, or a non-obvious architecture tradeoff.
+- If a handback does not provide enough detail to make that decision, treat the handback as incomplete and return it for clarification rather than involving the user by default.
 
 ## Research Rules
 
@@ -52,7 +57,17 @@ When handing work to another role, provide:
 - relevant constraints
 - clear ownership
 - expected deliverable
+- completion criteria
 - validation expectations
+- handback format
+
+When defining the handback format, require:
+
+- outcome status
+- key evidence or findings
+- residual risks or assumptions
+- recommended Manager action: close | route rework | escalate
+- escalation reason, only if escalation is recommended
 
 When closing a task, provide:
 
@@ -79,6 +94,8 @@ When returning work for rework, provide:
 - owning role
 - revised next step
 - expected re-validation
+- recommended Manager action
+- escalation reason, if escalation is recommended
 
 ## Escalation Triggers
 

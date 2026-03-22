@@ -50,10 +50,14 @@ But it is still small enough to execute quickly and reason about clearly.
 - confirm the result matches the task request
 - confirm the changes are minimal and maintainable
 - identify any missing requirement or quality issue
+- return `accepted` or `rework required` to the Manager without waiting on the user
+- include a recommended Manager action and escalation reason only when a human decision is truly needed
 
 5. Manager
 
 - summarize the outcome
+- consume reviewer output and either close the task or route rework
+- involve the user only when the review handback identifies a genuine escalation case
 - decide whether any memory should be promoted
 
 ## Success Criteria
@@ -64,6 +68,8 @@ But it is still small enough to execute quickly and reason about clearly.
 - verification evidence is recorded
 - review reaches a clear acceptance decision
 - the Manager closes the task cleanly
+- no child thread requires user intervention when the Manager can proceed
+- specialist handbacks are detailed enough for the Manager to decide whether user involvement is necessary
 
 ## Suggested Evidence To Capture
 
@@ -73,6 +79,7 @@ But it is still small enough to execute quickly and reason about clearly.
 - validation report
 - review result
 - final closure summary
+- any rework handoff, if review fails
 
 ## Common Failure Signals
 
@@ -81,3 +88,4 @@ But it is still small enough to execute quickly and reason about clearly.
 - missing verification evidence
 - Reviewer acting like a second implementer
 - Manager closing the task without clear acceptance
+- Reviewer or Manager leaving the task in a user-facing waiting state without a real escalation
