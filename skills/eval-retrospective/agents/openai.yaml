@@ -1,0 +1,4 @@
+interface:
+  display_name: "Eval Retrospective"
+  short_description: "Evaluates process quality after verification"
+  default_prompt: "Use $eval-retrospective after verification to compare plan versus execution, identify process misses, classify any failures when helpful, and return a recommendation of no framework change, candidate improvement, or required skill/process update."

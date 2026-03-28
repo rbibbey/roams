@@ -9,6 +9,7 @@ Verify that ROAMS can distinguish:
 - temporary working notes
 - candidate memory
 - durable long-term memory
+- stale or duplicate existing memory
 
 ## Scenario
 
@@ -27,6 +28,7 @@ Unless noted otherwise, assume none of these observations are already present in
 - which observations should not be promoted at all
 - which should be staged as candidates
 - which should be promoted immediately
+- which existing memory should be pruned or merged if current evidence invalidates it
 - which memory bucket each promoted item belongs in
 
 ## Expected Output
@@ -35,6 +37,7 @@ The test should return:
 
 - per-item classification
 - promote, stage, or discard decision
+- prune or merge decision when applicable
 - target memory bucket when applicable
 - brief rationale
 

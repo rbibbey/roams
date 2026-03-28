@@ -8,55 +8,55 @@ Keep plans short and current. Replace stale detail with the latest verified stat
 
 ### Task
 
-Implement layered UI Designer extension rules: make ROAMS explicitly defer to project-local art skills when present, add verification coverage, and wire SlappyButt's UI Designer path to its local asset-generation skill.
+Implement commit-readiness gates, retrospective and skill-evolution loops, shared-skill guidance, and bounded automation-loop capabilities across the ROAMS template.
 
 ### Status
 
 - state: complete
 - owner: Manager
-- complexity: standard
+- complexity: complex
 
 ### Success Criteria
 
-- `AGENTS.md` and `skills/ui-designer/SKILL.md` define the layered extension model for project-local design or art skills.
-- `UI Designer` explicitly invokes project-local art skills for repo-specific asset work while retaining orchestration ownership.
-- the verification suite includes a scenario for repos with a local design skill.
-- `README.md` bootstrap guidance notes that project-local skills may extend base roles.
-- SlappyButt's local operating rules explicitly route asset-facing UI design tasks through `$slappy-butts-asset-generation`.
+- `AGENTS.md` defines documentation review, memory review, and retrospective review as explicit gates before commit readiness.
+- shared-skill versus local-skill boundaries are documented in the core operating model and bootstrap guidance.
+- new skills exist for documentation review, retrospective evaluation, skill evolution, repo evaluation loops, and implementation loops.
+- the verification suite covers docs-gate, retrospective, skill-evolution, cross-repo evaluation, and bounded implementation-loop scenarios.
+- roadmap and status docs reflect the new self-improvement and automation-loop direction.
 - verification evidence is recorded.
-- review reaches a clear acceptance decision.
 
 ### Risks
 
-- the base `UI Designer` role could become too specific to a single project's art workflow.
-- SlappyButt integration must avoid overwriting project-local style rules that are already working.
+- the framework could over-document automation before real execution tooling exists.
+- new gates could become ceremonial if they are not reflected consistently across skills and verification prompts.
+- shared-skill and local-skill boundaries could become muddy if bootstrap guidance is not updated with the core contract.
 
 ### Steps
 
-1. Update ROAMS operating rules and the `ui-designer` skill to support project-local art skill extension.
-2. Update ROAMS bootstrap and verification docs to cover the layered extension pattern.
-3. Update SlappyButt's `AGENTS.md` so UI Designer explicitly invokes `$slappy-butts-asset-generation` for asset-facing tasks.
-4. Validate the new role contract and review the diffs in both repositories.
+1. Update the core operating contract and Manager/memory/bootstrap skills to enforce the new gates and skill-evolution responsibilities.
+2. Add new capability skills and reusable prompts for documentation review, retrospective evaluation, skill evolution, repo evaluation, and bounded implementation loops.
+3. Update README, roadmap, and status docs to describe the shared-skill model, commit-readiness gates, and automation-loop direction.
+4. Expand the verification suite with scenarios that exercise the new gates and self-improvement loops.
+5. Validate file presence and key rule markers, then review the diffs.
 
 ### Validation
 
-- commands run: `Select-String` checks in `AGENTS.md`, `skills/ui-designer/SKILL.md`, `README.md`, and `C:\git\SlappyButt\AGENTS.md`, `Test-Path examples/verification/ui-designer-local-skill-test.md`, `git diff` review in both repositories
-- tests executed: none
-- manual checks: reviewed the layered role contract and confirmed that ROAMS keeps `UI Designer` generic, the new verification scenario covers local-skill routing, and SlappyButt explicitly routes asset-facing UI design work through `$slappy-butts-asset-generation` while preserving the local skill as the style source of truth
+- commands run: `git status --short`, `Get-ChildItem -Recurse -File`, `Get-Content` on core docs and skills, `Select-String` checks for new gate and automation markers in `AGENTS.md`, `README.md`, and `docs/roadmap.md`, `Test-Path` checks for all new skills and verification files, `git diff --stat`, `git diff` on representative files, `git diff --check`, and an inline PowerShell contract-validation script covering required files and key lifecycle markers
+- tests executed: `git diff --check`, inline contract-validation script result `CONTRACT_VALIDATION: PASS`
+- manual checks: reviewed the updated lifecycle, README guidance, roadmap sequencing, new capability skills, and verification prompts to confirm the new gates and self-improvement loop are reflected consistently; corrected stale verification prompts before the final validation pass
 - review status: accepted
 
 ### Handoffs
 
 - from: Manager
 - to: Coder, QA, Reviewer
-- deliverable: updated UI Designer rules, layered extension verification test, SlappyButt integration guidance, validation evidence, acceptance decision
+- deliverable: updated operating model, new capability skills, expanded verification suite, validation evidence, acceptance decision
 - open questions: none
 
 ### Notes
 
-This task should keep the shared UI Designer role generic while letting downstream repos preserve stronger local art workflows.
-SlappyButt is the first concrete integration of the layered extension pattern.
-Expected task path for SlappyButt art work: `Manager -> UI Designer -> $slappy-butts-asset-generation -> handoff`.
+This implementation keeps ROAMS capability-first: it adds explicit gates and bounded automation loops without introducing autonomous publishing or a new specialist role prematurely.
+The new loop design is documented as Manager-owned guidance rather than executable infrastructure so downstream repos can adopt it incrementally.
 
 ## Plan Template
 

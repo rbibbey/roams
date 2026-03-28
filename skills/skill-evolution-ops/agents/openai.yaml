@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Evolution Ops"
+  short_description: "Improves shared skills and verification from repeated evidence"
+  default_prompt: "Use $skill-evolution-ops to evaluate repeated omissions, manual nudges, and retrospective findings, then decide whether to make no change, stage a candidate improvement, patch shared or local skill guidance, add verification coverage, or propose a roadmap update."

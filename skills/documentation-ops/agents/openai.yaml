@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Ops"
+  short_description: "Runs the docs gate before commit readiness"
+  default_prompt: "Use $documentation-ops after implementation and verification to inspect the effective change set, update any affected documentation, or return an explicit no-doc-update-needed decision before the work is considered commit-ready."

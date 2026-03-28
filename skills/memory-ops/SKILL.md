@@ -7,20 +7,27 @@ description: Memory staging, promotion, pruning, and bucket-selection guidance f
 
 Keep long-term memory selective, durable, and reviewable.
 
+Memory review is a required pre-commit gate after implementation and verification.
+
 ## Workflow
 
-1. Identify the new information or lesson being considered.
-2. Decide whether it is temporary working context, a memory candidate, or durable long-term memory.
-3. If it is only a candidate, stage it in `memory/candidates.md` without promoting it yet.
-4. If it is durable, choose the correct memory bucket.
-5. Apply the promotion checklist before updating long-term memory.
-6. Periodically review `memory/candidates.md` and long-term memory for stale, duplicate, or no-longer-useful entries.
+1. Summarize the meaningful signals from the completed or nearly completed task.
+2. Compare those signals against the current memory state before deciding anything.
+3. Classify each signal as temporary, candidate, durable, stale, duplicate, or noise.
+4. If it is only a candidate, stage it in `memory/candidates.md` without promoting it yet.
+5. If it is durable, choose the correct memory bucket.
+6. Apply the promotion checklist before updating long-term memory.
+7. Periodically review `memory/candidates.md` and long-term memory for stale, duplicate, or no-longer-useful entries.
+8. Return an explicit result: memory updated or no durable memory change needed.
 
 ## Memory Categories
 
 - Temporary working context: task-local notes that belong in `.agent/PLANS.md` or a task artifact, not long-term memory.
 - Candidate memory: potentially reusable signal that is not yet proven durable enough for promotion.
 - Long-term memory: durable guidance that should persist across future work.
+- Stale memory: existing memory that current evidence shows is outdated or less accurate than a newer formulation.
+- Duplicate memory: overlapping guidance that should be merged or shortened.
+- Noise: observations that were useful in the task but should not survive the task.
 
 ## Bucket Rules
 
@@ -79,3 +86,4 @@ Consider memory updates when:
 - A failed task can produce a candidate lesson before it produces a durable lesson.
 - Repeated candidate patterns should be promoted when evidence becomes strong enough.
 - If memory starts accumulating noise, tighten promotion rather than adding more buckets.
+- If the same class of signal keeps appearing, recommend whether the remedy belongs in memory alone or also in a shared skill, local skill, or verification scenario.

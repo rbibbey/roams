@@ -16,6 +16,7 @@ Feature request:
 - gather the minimum necessary context
 - decide whether a plan is needed
 - identify which roles are needed
+- identify which shared skills and local extensions are relevant
 - define bounded ownership for each role
 - state risks, assumptions, and success criteria
 
@@ -26,6 +27,7 @@ The Manager should return:
 - task classification
 - short plan or explicit decision not to create one
 - role assignments
+- skill or capability selection
 - success criteria
 - notable risks or open questions
 - closure conditions
@@ -35,6 +37,7 @@ The Manager should return:
 - the task is classified reasonably
 - the plan is proportional to the task
 - delegation is purposeful and bounded
+- relevant shared skills and local extensions are identified before planning
 - success criteria are specific enough to validate
 - the Manager does not over-implement the work itself
 

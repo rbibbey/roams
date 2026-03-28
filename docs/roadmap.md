@@ -28,9 +28,10 @@ Current roadmap state:
 - completed: Phase 3 - Rework And Diagnosis Taxonomy
 - completed: Phase 4 - Subagent Orchestration Rules
 - completed: Phase 5 - Bootstrap Automation
-- next active phase: Phase 6 - Evaluation Harness Expansion
+- completed: Phase 6 - Commit-Readiness Gates And Retrospective Loops
+- next active phase: Phase 7 - Cross-Repo Evaluation And Implementation Loops
 
-Phase 6 can now build on the standardized bootstrap flow and verification coverage added in Phase 5.
+Phase 7 can now build on the explicit commit-readiness gates and self-improvement rules added in Phase 6.
 
 ## Planned Phases
 
@@ -141,30 +142,57 @@ Acceptance criteria:
 - bootstrap does not over-provision roles, memory, or process
 - the initial repo starts with clean separation between roadmap, status, and active-plan artifacts
 
-### Phase 6: Evaluation Harness Expansion
+### Phase 6: Commit-Readiness Gates And Retrospective Loops
 
 Goal:
 
-Turn verification into a reusable refinement system for the operating model.
+Make documentation review, memory review, and retrospective review explicit lifecycle gates instead of optional reminders.
 
 Deliverables:
 
-- a richer verification suite covering failure cases and rework loops
-- scorecard format for role and workflow evaluations
-- regression checks for roadmap, memory, and research behavior
-- reusable acceptance checklist for major ROAMS capability additions
+- explicit documentation review rules in the operating model
+- explicit memory review as a required pre-commit gate
+- explicit retrospective and evaluation loop after validation
+- skill-evolution guidance for shared-skill and verification refinement
+- verification scenarios covering docs, memory, retrospective, and repeated omission patterns
 
 Required additions:
 
-- expand `examples/verification/`
-- add a top-level verification index that separates role, capability, and workflow tests
-- document how failures discovered in verification become roadmap inputs
+- update `AGENTS.md` lifecycle and Definition of Done rules
+- add skills for documentation review, retrospective evaluation, and skill evolution if the workflow benefits from explicit capability modules
+- expand `examples/verification/` to cover the new gates and evaluation loop
 
 Acceptance criteria:
 
-- each major ROAMS capability can be tested in isolation
-- at least one regression-oriented workflow test exists for each major phase added after v1
-- verification outputs are structured enough to drive further refinement
+- non-trivial tasks are not considered commit-ready until the three gates run
+- retrospective can recommend no change, a candidate improvement, or a required skill/process update
+- repeated omissions can be routed into shared-skill, local-skill, verification, or roadmap updates
+
+### Phase 7: Cross-Repo Evaluation And Implementation Loops
+
+Goal:
+
+Turn ROAMS into a bounded planning and execution loop that can inspect repository state, evaluate next work, and stop safely before publish.
+
+Deliverables:
+
+- reusable cross-repo evaluation-and-planning loop guidance
+- bounded implementation loop guidance that consumes one approved plan item at a time
+- issue-aware repo evaluation inputs and output format
+- stop-before-publish decision gate
+- verification scenarios covering issue-driven planning and commit-ready loop behavior
+
+Required additions:
+
+- add explicit automation-loop guidance modules or skills
+- expand `README.md` with automation loop layering
+- add verification scenarios for cross-repo evaluation and implementation-loop gates
+
+Acceptance criteria:
+
+- the evaluation loop can combine roadmap, active plan, memory, retrospective output, and issue context into one clear next-step recommendation
+- the implementation loop includes validation plus documentation, memory, and retrospective gates
+- the loops stop before publish and return a decision-ready handoff rather than auto-publishing
 
 ## Promotion Candidates
 
@@ -179,9 +207,9 @@ These are not committed roadmap phases. They are capability-first promotion cand
 
 ### Automation
 
-- current capability owner: Manager with future bootstrap and workflow automation support
+- current capability owner: Manager with bootstrap and workflow automation support
 - trigger for promotion: recurring setup, maintenance, or orchestration work justifies its own operating mode
-- non-promotion default: keep automation as a capability invoked by the Manager
+- non-promotion default: keep automation as a capability invoked by the Manager through bounded evaluation and implementation loops
 - evidence needed before promotion: repeated automation patterns across projects and stable handoff requirements
 
 ### Debugger Or Diagnostician
@@ -194,7 +222,7 @@ These are not committed roadmap phases. They are capability-first promotion cand
 ## Deferred Items
 
 - additional specialist roles beyond the current operating model
-- deep automation beyond bootstrap support
+- autonomous publishing beyond bounded evaluation and implementation support
 - role promotion without repeated evidence
 - broad MCP integrations not yet justified by repeated use
 - expanded design asset workflows until UI work requires them regularly

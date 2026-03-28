@@ -31,6 +31,8 @@ The system is also feedback-driven:
 - failed review sends work back with actionable findings
 - the owning role adjusts its next pass instead of repeating the same attempt
 - repeated failures can trigger re-planning or diagnosis mode
+- documentation review, memory review, and retrospective review act as explicit commit-readiness gates
+- repeated process misses can trigger shared-skill, local-skill, or verification updates
 
 ## Repository Layout
 
@@ -42,12 +44,18 @@ The system is also feedback-driven:
 - [memory/candidates.md](C:\git\codex-roams\memory\candidates.md): staged candidate memory awaiting promotion, defer, or discard
 - [docs/status.md](C:\git\codex-roams\docs\status.md): current repository purpose, stage, goals, and open questions
 - [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md): long-horizon feature sequencing and phase definitions
+- [skills/README.md](C:\git\codex-roams\skills\README.md): shared skill sync and versioning contract
 - [skills/manager/SKILL.md](C:\git\codex-roams\skills\manager\SKILL.md): orchestration skill
 - [skills/diagnosis-ops/SKILL.md](C:\git\codex-roams\skills\diagnosis-ops\SKILL.md): shared failure classification and rework guidance
 - [skills/memory-ops/SKILL.md](C:\git\codex-roams\skills\memory-ops\SKILL.md): staged memory promotion and pruning guidance
+- [skills/documentation-ops/SKILL.md](C:\git\codex-roams\skills\documentation-ops\SKILL.md): pre-commit documentation review guidance
+- [skills/eval-retrospective/SKILL.md](C:\git\codex-roams\skills\eval-retrospective\SKILL.md): post-verification retrospective and process evaluation guidance
+- [skills/skill-evolution-ops/SKILL.md](C:\git\codex-roams\skills\skill-evolution-ops\SKILL.md): shared-skill and verification evolution guidance
 - [skills/subagent-ops/SKILL.md](C:\git\codex-roams\skills\subagent-ops\SKILL.md): bounded subagent delegation and merge guidance
 - [skills/research/SKILL.md](C:\git\codex-roams\skills\research\SKILL.md): Manager-owned research capability
 - [skills/bootstrap/SKILL.md](C:\git\codex-roams\skills\bootstrap\SKILL.md): lightweight new-project setup workflow
+- [skills/repo-eval-loop/SKILL.md](C:\git\codex-roams\skills\repo-eval-loop\SKILL.md): cross-repo evaluation and planning loop guidance
+- [skills/implementation-loop/SKILL.md](C:\git\codex-roams\skills\implementation-loop\SKILL.md): bounded implementation loop guidance that stops before publish
 - [skills/ui-designer/SKILL.md](C:\git\codex-roams\skills\ui-designer\SKILL.md): design skill
 - [skills/coder/SKILL.md](C:\git\codex-roams\skills\coder\SKILL.md): implementation skill
 - [skills/qa/SKILL.md](C:\git\codex-roams\skills\qa\SKILL.md): validation skill
@@ -68,7 +76,9 @@ Use this sequence when starting a new project from this template:
 7. Rewrite [docs/roadmap.md](C:\git\codex-roams\docs\roadmap.md) so phases reflect the new project's actual sequencing rather than this template's internal roadmap.
 8. Reset [.agent/PLANS.md](C:\git\codex-roams\.agent\PLANS.md) to the current active task only when non-trivial work begins.
 9. Prefer project-local skills when a repository has specialist behavior that should extend a base role rather than overwrite it.
-10. After meaningful work, stage or promote only durable signal into the memory files.
+10. Treat shared ROAMS skills as the reusable base operating model and add repo-local skills only for project-specific behavior.
+11. After meaningful work, run documentation review, memory review, and retrospective review before considering the work commit-ready.
+12. Stage or promote only durable signal into the memory files.
 
 ## Standardized Bootstrap Workflow
 
@@ -81,6 +91,7 @@ Use ROAMS on itself when bootstrapping a fresh repo:
 5. Manager keeps `.agent/PLANS.md` task-local and does not turn it into a backlog.
 6. Manager checks whether the repo has project-local skills that should extend base roles such as `UI Designer`.
 7. Manager verifies that roadmap, status, and active plan remain clearly separated before closing bootstrap.
+8. Manager keeps shared-skill guidance centralized and avoids duplicating generic base-role rules into repo-local skills.
 
 ## Bootstrap Checklist
 
@@ -93,7 +104,30 @@ Use ROAMS on itself when bootstrapping a fresh repo:
 - `memory/candidates.md` used for uncertain but potentially durable setup observations
 - `.agent/PLANS.md` reset to the current bootstrap or first implementation task
 - project-local skills linked to the base roles they extend when they are the repo's source of truth
+- shared-skill versus local-skill boundaries kept explicit
+- documentation, memory, and retrospective gates present in the working model
 - unnecessary roles, skills, or automation not added preemptively
+
+## Shared Skill Model
+
+ROAMS assumes a shared base operating model plus local extensions.
+
+- shared ROAMS skills are the reusable source of truth for common role behavior
+- project-local skills should add repo-specific rules, workflows, prompts, and references
+- project-local skills should extend base roles rather than silently replacing them
+- the Manager is responsible for checking local extensions before planning or delegation
+
+## Commit-Readiness Gates
+
+Every non-trivial task should pass these gates before it is considered commit-ready:
+
+1. implementation completed
+2. validation completed
+3. documentation review completed
+4. memory review completed
+5. retrospective review completed
+
+If a gate does not result in a file change, it should still produce an explicit no-change-needed decision.
 
 ## Optional Bootstrap Automation Prompt
 
@@ -135,17 +169,19 @@ Keep these documents separate. Status is not backlog, roadmap is not active exec
 
 ## Default Workflow
 
-The v1 workflow is:
+The current workflow is:
 
 1. Manager classifies the task.
 2. Manager gathers the minimum required context.
-3. Manager triggers research when external knowledge must be verified.
-4. Manager creates or updates the active plan.
-5. Manager delegates to specialist roles only when useful.
-6. Specialist roles execute bounded work and return evidence.
-7. QA and Reviewer validate non-trivial work.
-8. Failed checks trigger rework with explicit evidence and a revised next step.
-9. Manager closes the task and decides whether memory should change.
+3. Manager checks for relevant project-local skill extensions.
+4. Manager triggers research when external knowledge must be verified.
+5. Manager creates or updates the active plan.
+6. Manager delegates to specialist roles only when useful.
+7. Specialist roles execute bounded work and return evidence.
+8. QA and Reviewer validate non-trivial work.
+9. Manager runs documentation review, memory review, and retrospective review.
+10. Failed checks trigger rework with explicit evidence and a revised next step.
+11. Manager closes the task and decides whether memory, shared skills, local skills, verification coverage, or roadmap guidance should change.
 
 ## Research Capability
 
@@ -175,6 +211,26 @@ Research findings should usually be shared as a short Research Brief containing:
 - constraints or caveats
 - implementation impact
 - open questions
+
+## Automation Loops
+
+ROAMS treats automation as a Manager-owned capability.
+
+Recommended automation layering:
+
+1. `repo-eval-loop`
+- evaluate repo state, roadmap, active plan, memory, and GitHub issues
+- recommend the next bounded task
+- stop with a decision-ready summary before publish
+
+2. `implementation-loop`
+- execute one approved plan item
+- validate the result
+- run documentation, memory, and retrospective gates
+- stop before publish
+
+Automation should improve planning and execution discipline first.
+Autonomous publishing stays out of scope until the evaluation harness proves the loops are reliable.
 
 ## Adding Roles Over Time
 

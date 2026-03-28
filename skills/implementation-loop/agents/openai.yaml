@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementation Loop"
+  short_description: "Executes one approved task slice and stops before publish"
+  default_prompt: "Use $implementation-loop to execute one approved plan item, verify it, run documentation review, memory review, and retrospective review, summarize commit readiness, and stop before publish."

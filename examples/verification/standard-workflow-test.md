@@ -18,6 +18,9 @@ This task is large enough to require:
 - Coder implementation
 - QA verification
 - Reviewer acceptance
+- documentation review
+- memory review
+- retrospective review
 
 But it is still small enough to execute quickly and reason about clearly.
 
@@ -57,8 +60,11 @@ But it is still small enough to execute quickly and reason about clearly.
 
 - summarize the outcome
 - consume reviewer output and either close the task or route rework
+- run documentation review and record whether docs changed or no docs update was needed
+- run memory review and record whether memory changed or no durable update was needed
+- run retrospective review and record whether the process needs no change, a candidate improvement, or a required skill/process update
 - involve the user only when the review handback identifies a genuine escalation case
-- decide whether any memory should be promoted
+- decide whether any memory, skill, verification, or roadmap guidance should change
 
 ## Success Criteria
 
@@ -67,6 +73,9 @@ But it is still small enough to execute quickly and reason about clearly.
 - `README.md` includes a link to `docs/status.md` in the repository layout
 - verification evidence is recorded
 - review reaches a clear acceptance decision
+- documentation review result is recorded
+- memory review result is recorded
+- retrospective result is recorded
 - the Manager closes the task cleanly
 - no child thread requires user intervention when the Manager can proceed
 - specialist handbacks are detailed enough for the Manager to decide whether user involvement is necessary
@@ -78,6 +87,9 @@ But it is still small enough to execute quickly and reason about clearly.
 - implementation summary
 - validation report
 - review result
+- documentation review result
+- memory review result
+- retrospective result
 - final closure summary
 - any rework handoff, if review fails
 
@@ -86,6 +98,7 @@ But it is still small enough to execute quickly and reason about clearly.
 - no plan for a standard task
 - weak role handoffs
 - missing verification evidence
+- missing gate decisions after verification
 - Reviewer acting like a second implementer
 - Manager closing the task without clear acceptance
 - Reviewer or Manager leaving the task in a user-facing waiting state without a real escalation

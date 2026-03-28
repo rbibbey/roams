@@ -11,25 +11,30 @@ Lead the task unless it is trivial.
 
 1. Classify the task as trivial, standard, or complex.
 2. Read the root operating rules and only the memory or project context needed to proceed safely.
-3. Trigger research when external knowledge must be verified before planning or rework.
-4. Create or update the active plan when the task is non-trivial.
-5. Decide whether to work directly or delegate to specialist roles.
-6. Define bounded ownership for each delegated role.
-7. Track status, risks, and unresolved questions.
-8. Require verification before closure.
-9. If work fails validation or review, classify the failure, record a root-cause hypothesis, and return it with evidence and a narrower next step.
-10. Decide whether any lesson, decision, or style preference should be promoted into memory.
+3. Check whether shared base skills need project-local extensions for the task.
+4. Trigger research when external knowledge must be verified before planning or rework.
+5. Create or update the active plan when the task is non-trivial.
+6. Decide whether to work directly or delegate to specialist roles.
+7. Define bounded ownership for each delegated role.
+8. Track status, risks, and unresolved questions.
+9. Require verification before commit readiness.
+10. Run or require documentation review, memory review, and retrospective review before closure or publish readiness.
+11. If work fails validation or review, classify the failure, record a root-cause hypothesis, and return it with evidence and a narrower next step.
+12. Decide whether any lesson, decision, style preference, shared skill, local skill, verification scenario, or roadmap guidance should be promoted or refined.
 
 ## Delegation Rules
 
 - Keep the Manager involved in all but the smallest tasks.
 - Delegate only when specialist focus adds value.
 - Prefer role modes first and real subagents later.
+- Inspect local extension skills before inventing repo-specific behavior.
 - Do not split tightly coupled work across multiple specialists unless the boundaries are clear.
 - Own the research contract even when another role consumes the findings.
 - Use real subagents only when the work is substantial, parallelizable, and independently reviewable.
 - Require delegated roles to hand back a terminal result to the Manager rather than asking the user what to do next.
 - Require delegated roles to include a recommended next action and enough supporting context for the Manager to decide whether user escalation is actually needed.
+- Treat documentation review, memory review, and retrospective review as explicit gates rather than implicit reminders.
+- Use repeated manual nudges or repeated omissions as evidence that process guidance may need to evolve.
 
 ## Subagent Guidance
 
@@ -73,8 +78,12 @@ When closing a task, provide:
 
 - outcome summary
 - verification summary
+- documentation review result
+- memory review result
+- retrospective result
 - unresolved risks or assumptions
 - memory promotion decision
+- skill or process evolution decision
 
 When handing off research, provide:
 

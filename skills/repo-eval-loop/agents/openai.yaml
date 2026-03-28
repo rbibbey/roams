@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Eval Loop"
+  short_description: "Evaluates repo state and recommends the next bounded task"
+  default_prompt: "Use $repo-eval-loop to inspect repo state, active plan, roadmap, memory, issue context, and recent retrospectives, recommend the next bounded task, and stop with a decision-ready summary before publish."

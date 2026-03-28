@@ -17,9 +17,14 @@ The suite is designed to answer two questions:
 - [ui-designer-local-skill-test.md](C:\git\codex-roams\examples\verification\ui-designer-local-skill-test.md): validates UI Designer behavior when a project-local art skill is present
 - [research-capability-test.md](C:\git\codex-roams\examples\verification\research-capability-test.md): validates canonical-source research and briefing
 - [memory-promotion-test.md](C:\git\codex-roams\examples\verification\memory-promotion-test.md): validates staged memory promotion and bucket selection
+- [documentation-review-test.md](C:\git\codex-roams\examples\verification\documentation-review-test.md): validates explicit docs-gate decisions before commit readiness
+- [eval-retrospective-test.md](C:\git\codex-roams\examples\verification\eval-retrospective-test.md): validates post-verification process evaluation and remedy selection
+- [skill-evolution-test.md](C:\git\codex-roams\examples\verification\skill-evolution-test.md): validates repeated-omission escalation into skill or verification updates
 - [diagnosis-rework-test.md](C:\git\codex-roams\examples\verification\diagnosis-rework-test.md): validates failure classification and narrower rework
 - [subagent-orchestration-test.md](C:\git\codex-roams\examples\verification\subagent-orchestration-test.md): validates bounded parallel delegation and merge rules
 - [bootstrap-automation-test.md](C:\git\codex-roams\examples\verification\bootstrap-automation-test.md): validates fresh-repo bootstrap and lightweight setup behavior
+- [cross-repo-eval-loop-test.md](C:\git\codex-roams\examples\verification\cross-repo-eval-loop-test.md): validates repo-state plus issue-driven next-task evaluation
+- [implementation-loop-test.md](C:\git\codex-roams\examples\verification\implementation-loop-test.md): validates bounded implementation plus commit-readiness gates and stop-before-publish behavior
 - [roadmap-governance-test.md](C:\git\codex-roams\examples\verification\roadmap-governance-test.md): validates roadmap, status, and active-plan separation
 - [standard-workflow-test.md](C:\git\codex-roams\examples\verification\standard-workflow-test.md): validates the full Manager -> specialist -> validation -> review -> closure flow
 
@@ -29,10 +34,11 @@ Run the tests in this order:
 
 1. role tests
 2. capability tests
-3. governance tests
-4. standard workflow test
+3. evaluation and automation-loop tests
+4. governance tests
+5. standard workflow test
 
-The role tests should be run first so each role can be tuned independently before validating capability behavior, document governance, and orchestration across the full system.
+The role tests should be run first so each role can be tuned independently before validating capability behavior, commit-readiness gates, automation-loop behavior, document governance, and orchestration across the full system.
 
 ## Evaluation Rules
 
@@ -44,6 +50,7 @@ For each test, capture:
 - pass or fail decision
 - friction or confusion observed
 - candidate improvements to roles, memory, or workflow
+- whether the result exposed a shared-skill, local-skill, or verification improvement
 
 ## Promotion Guidance
 

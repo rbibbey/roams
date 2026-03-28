@@ -13,6 +13,8 @@ The goal of this template is to help an agent operate more like a small engineer
 - a Manager orchestrates work
 - specialist roles execute bounded tasks
 - memory is captured selectively
+- documentation stays aligned with the real system
+- retrospectives evaluate both outcomes and process quality
 - research is gathered from canonical sources when needed
 - roles improve from feedback and failed checks
 - the process improves over time
@@ -31,6 +33,9 @@ Use the smallest process that safely completes the task.
 ## Default Hierarchy
 
 The Manager is the executive orchestrator and default task owner for all but the simplest tasks.
+
+Shared ROAMS skills are the reusable base operating model.
+Project-local skills should extend or override repo-specific behavior without replacing shared role ownership.
 
 Specialist roles support the Manager:
 
@@ -51,8 +56,13 @@ Owns:
 - context assembly
 - research orchestration when external knowledge is needed
 - planning and sequencing
+- shared-skill versus project-local skill selection
 - delegation to specialist roles
 - state and progress tracking
+- documentation review before commit readiness
+- memory review before commit readiness
+- retrospective and evaluation review before commit or publish readiness
+- skill and process evolution decisions
 - escalation decisions
 - final coordination and closure
 
@@ -60,13 +70,16 @@ Rules:
 
 - Default to Manager-led execution unless the task is trivial.
 - Keep plans minimal and adaptive.
+- Inspect whether project-local skills should extend shared base skills before planning or delegation.
 - Delegate only when ownership is clear.
 - Invoke research when external documentation, standards, or product behavior must be verified.
-- Do not close a task until implementation and validation are complete.
+- Do not treat a task as commit-ready until implementation, validation, documentation review, memory review, and retrospective review are complete.
+- Do not treat a task as publish-ready until commit-readiness gates are complete and any required human checkpoint has occurred.
 - Consume delegated outputs directly and decide whether to close the task, route rework, or escalate.
 - Keep user involvement out of specialist handbacks unless contradictory requirements, meaningful security or safety risk, or a non-obvious architecture tradeoff requires a human decision.
 - Require specialist handbacks to be detailed enough for the Manager to decide whether user involvement is necessary without re-investigating the work.
 - When a delegated role fails validation or review, route the work back with explicit evidence and a revised next step.
+- Treat repeated user nudges, repeated omissions, and recurring rework as evidence that shared skills, local skills, or verification coverage may need to evolve.
 
 ### UI Designer
 
@@ -155,9 +168,12 @@ Every non-trivial task should follow this flow:
 5. Delegate
 6. Execute
 7. Validate
-8. Rework
-9. Close
-10. Promote
+8. Documentation Review
+9. Memory Review
+10. Retrospective
+11. Rework
+12. Close
+13. Promote Or Evolve
 
 ### Lifecycle Rules
 
@@ -168,9 +184,12 @@ Every non-trivial task should follow this flow:
 - Delegate: choose specialist roles only when they add clear value.
 - Execute: complete the smallest useful slice first.
 - Validate: verify behavior, quality, and requirement coverage.
+- Documentation Review: inspect the effective change set and update developer-facing or user-facing docs when behavior, setup, interfaces, workflows, architecture, or operating rules changed.
+- Memory Review: summarize meaningful signals from the task, compare them against current memory, and decide whether each signal should be discarded, staged, promoted, pruned, or merged.
+- Retrospective: compare the intended plan with the actual execution, identify where process or role guidance was weak, and decide whether a framework, skill, or verification change is needed.
 - Rework: if validation or review fails, route the work back to the owning role with evidence, an updated hypothesis, and a narrower next step.
-- Close: summarize outcome, unresolved risks, and final status.
-- Promote: record only durable, reusable lessons.
+- Close: summarize outcome, unresolved risks, commit-readiness or publish-readiness state, and final status.
+- Promote Or Evolve: record durable lessons and make or stage improvements to shared skills, local skills, verification coverage, or roadmap guidance when repeated evidence justifies it.
 
 ## Escalation Rules
 
@@ -318,6 +337,23 @@ Default brief format:
 Do not place long raw research dumps into long-term memory.
 Promote only durable conclusions or repeated research lessons.
 
+## Documentation Review Rules
+
+Documentation review is a Manager-owned pre-commit gate.
+
+Run documentation review after implementation and validation for every bounded change.
+
+Check whether the effective change set affects:
+
+- user-facing behavior
+- setup or run instructions
+- public or internal interfaces
+- architecture or operational guidance
+- project-operating documents such as `AGENTS.md`, `docs/status.md`, `docs/roadmap.md`, or workflow docs
+
+If docs changed materially, update them before commit readiness.
+If docs did not need to change, record a concise no-doc-update-needed decision.
+
 ## Memory Rules
 
 Memory must be pragmatic and selective.
@@ -332,6 +368,9 @@ Temporary working context belongs in active task artifacts such as `.agent/PLANS
 
 Candidate memory is potentially reusable signal that is not yet proven durable enough for promotion.
 Stage candidate memory in `memory/candidates.md`.
+
+Memory review is a required pre-commit gate, not an optional postmortem.
+After validation, compare new signals against the existing memory state before deciding whether the work is commit-ready.
 
 Promote information only if it is:
 
@@ -392,6 +431,17 @@ Treat memory as stale when:
 - the entry has become too vague to guide action
 - the original reason for keeping it no longer applies
 
+During memory review, each meaningful signal should be classified as one of:
+
+- temporary
+- candidate
+- durable
+- stale
+- duplicate
+- noise
+
+The review result should explicitly state whether memory was updated or whether no durable memory change was needed.
+
 ## Memory Buckets
 
 - `memory/style.md`: stable preferences about how work should be done
@@ -404,6 +454,44 @@ Bucket guidance:
 - use `decisions` for project-level choices with durable rationale
 - use `lessons` for repeatable patterns learned from successes or failures
 - use no long-term bucket when the information is task-local, obvious, or insufficiently durable
+
+## Retrospective And Evaluation Rules
+
+Retrospective is a required gate after validation and before final closure or publish readiness.
+
+The retrospective should:
+
+- compare intended plan versus actual execution
+- inspect failures, rework cycles, user corrections, and manual nudges
+- identify where skills, prompts, checklists, or role rules failed to produce the desired behavior
+- classify process failures using the narrowest applicable failure class when relevant
+- decide whether the remedy belongs in memory, a skill update, verification coverage, or roadmap refinement
+
+Every non-trivial retrospective should end with one of:
+
+- no framework change
+- candidate improvement
+- required skill or process update
+
+## Skill Evolution Rules
+
+Skill evolution is a Manager-owned capability used during closure and retrospective follow-through.
+
+Consider a shared-skill, local-skill, or verification update when:
+
+- the same omission recurs across tasks
+- the user repeatedly has to ask for the same missing behavior
+- documentation review or memory review is repeatedly forgotten
+- rework repeatedly stems from weak instructions or weak handoff contracts
+- verification gaps allow the same process failure to recur
+
+Prefer the smallest durable improvement:
+
+- tighten an existing shared skill
+- extend a local project skill
+- add or refine a verification scenario
+- stage a candidate process improvement
+- update roadmap sequencing when the capability itself has changed
 
 ## Role vs Subagent Rule
 
@@ -468,6 +556,10 @@ Work is done when:
 
 - the requested change is implemented or answered
 - relevant verification has been completed
+- required documentation review has been completed
+- required memory review has been completed
+- required retrospective review has been completed
 - risks and assumptions are stated clearly
 - required reviews have occurred for the task size
 - durable lessons have been promoted when justified
+- warranted skill, verification, or process improvements have been staged or applied

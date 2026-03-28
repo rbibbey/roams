@@ -1,6 +1,6 @@
 # Simple Workflow Task
 
-Use this task to verify that the v1 operating model works end to end.
+Use this task to verify that the current operating model works end to end.
 
 ## Goal
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Memory Ops"
   short_description: "Stages and promotes durable memory"
-  default_prompt: "Use $memory-ops to decide whether new information should stay task-local, be staged as a candidate, or be promoted into long-term memory, and identify the correct memory bucket."
+  default_prompt: "Use $memory-ops after implementation and verification to summarize meaningful task signals, compare them against current memory, classify each as temporary, candidate, durable, stale, duplicate, or noise, and return an explicit memory-updated or no-memory-change-needed decision."
